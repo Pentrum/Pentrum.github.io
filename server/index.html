@@ -1,0 +1,1211 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pentrum - Server</title>
+</head>
+<link rel="stylesheet" href="outcss/fonts.css">
+<link rel="stylesheet" href="animations/animations.css">
+<body>
+<div class="blobrot">
+	<div class="blob1"></div>
+	<div class="blob2"></div>
+	<div class="blob3"></div>
+    <div class="blob4"></div>
+</div>
+	<style>
+		.blob1 {
+            position: absolute;
+			height: 500px;
+			width: 500px;
+            opacity: 0.5;
+			border-radius: 50%;
+			background-color: #FF3333;
+		}
+		.blob2 {
+			position: absolute;
+			height: 450px;
+			width: 450px;
+            opacity: 0.5;
+			margin-top: -490px;
+            margin-left: 250px;
+			border-radius: 50%;
+			background-color: #FF973D;
+		}
+		.blob3 {
+			position: absolute;
+			height: 600px;
+			width: 600px;
+            opacity: 0.5;
+			margin-top: 550px;
+			border-radius: 50%;
+			background-color: #FF973D;
+		}
+		.blob4 {
+            position: absolute;
+			height: 300px;
+			width: 300px;
+            opacity: 0.5;
+            margin-top: 50px;
+            margin-left: -450px;
+			border-radius: 50%;
+			background-color: #FF3333;
+		}
+		.blobrot {
+			position: relative;
+			margin-left: 50%;
+			height: 1px;
+			width: 1px;
+			z-index: 1;
+			margin-top: 50px;
+            animation: rotate 57s infinite linear;
+			filter: blur(75px);
+            z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+		body {	
+			background-color: #1E1E1E;
+            overflow-x: hidden;
+            height: 2500px; }
+        /* Style the custom scrollbar */
+body::-webkit-scrollbar {
+  width: 0px; /* Adjust the width as needed */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #232323; /* Customize the thumb color */
+  border-radius: 0px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #4A4A4A; /* Customize the thumb color on hover */
+}
+
+/* Hide the scrollbar track, but still show the thumb */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+   
+
+    </style>
+<div class="navbarblur"></div>
+<div class="navbar">
+    <h1 class="titleblur">Pentrum Survival</h1>
+    <h1 class="title">Pentrum Survival</h1>  
+</div>
+<div class="category">
+    <div class="catimage"><img src="images/nav/Untitled-1.png"></div>
+    <div class="wibox">
+        <h2 class="wi">Wikipedia</h2></div>
+    <div class="upbox">
+        <h2 class="up">Updates</h2></div>
+    <div class="crbox">    
+        <h2 class="cr">Criminals</h2></div>
+    <div class="rubox">
+        <h2 class="ru">Jobs</h2></div>
+    <div class="lebox">
+        <h2 class="le">Leaderboards</h2></div>
+    <div class="gubox">
+        <h2 class="gu">Shop</h2></div>
+</div>
+<div class="navbarblur"></div>
+    <style>
+        .catimage {
+            position: absolute;
+            height: 80px;
+            width: auto;
+            top: 25px;
+            right: 50px;
+            transition: scale 0.4s ease;
+        }
+        .catimage > img {
+            height: 100%;
+        }
+        .catimage:hover {
+            scale: 1.1;
+        }
+        .navbar {
+            position: absolute;
+            z-index: 3;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(150px);
+            width: 640px;
+            height: 130px;
+            border-radius: 25px;
+            top: 5px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar:hover ~ .category {
+            height: 130px;
+            opacity: 1;
+        }
+        .navbar:hover ~ .navbarblur {
+            opacity: 0.5;
+        }
+        .navbar:hover .titleblur {
+            opacity: 0.5;
+        }
+        .category:hover {
+            height: 130px;
+            opacity: 1;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+        .category:hover ~ .navbarblur {
+            opacity: 0.5;
+            width: 1235px;
+            top: 5px;
+            left: 660px;
+        }
+        .navbar:hover {
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+        .category {
+            position: absolute;
+            z-index: 3;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(150px);
+            width: 1235px;
+            height: 10px;
+            opacity: 0;
+            border-radius: 25px;
+            top: 5px;
+            left: 660px;
+            overflow: hidden;
+            transition: height 0.5s cubic-bezier(.49,-0.01,.48,1.1), opacity 0.3s ease 0.1s, box-shadow 0.3s ease;
+        }
+        .navbarblur {
+            position: absolute;
+            z-index: 2;
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;
+            width: 640px;
+            height: 130px;
+            opacity: 0;
+            filter: blur(25px);
+            border-radius: 25px;
+            left: 8px;
+            top: 5px;
+            overflow: hidden;
+            transition: opacity 0.5s ease, height 0.4s ease, top 0.5s ease, left 0.5s ease, width 0.4s ease;
+        }
+    .title {
+        position: absolute;
+        font-size: 78px;
+        z-index: 5;
+        letter-spacing: -4px;
+        background-size: 170% 170%;
+        font-family: "visb", sans-serif;
+        white-space: nowrap;
+        top: -40px;
+        margin-left: 25px;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+        background-clip: text;
+        -webkit-background-clip: text; /* For Safari/Chrome */
+        color: transparent;
+        animation: gradientAnimation 4s ease-in-out infinite;
+}
+    .titleblur {
+        position: relative;
+        font-size: 78px;
+        opacity: 0;
+        background-size: 300% 300%;
+        font-family: "visb", sans-serif;
+        white-space: nowrap;
+        margin-top: 0px;
+        z-index: 4;
+        top: 10px;
+        margin-left: 25px;
+        filter: blur(20px);
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+        background-clip: text;
+        -webkit-background-clip: text; /* For Safari/Chrome */
+        color: transparent;
+        animation: gradientAnimation 4s ease-in-out infinite;
+        transition: opacity 0.4s ease;
+}
+
+        .wibox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 23px 0px 0px 0px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 5px;
+            top: 5px;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        } 
+        .wibox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .wibox:hover .wi {
+            color: #121212
+        }
+        .wi {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 85px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        .upbox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 0px 0px 0px 0px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 318px;
+            top: 5px;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        } 
+        .upbox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .upbox:hover .up {
+            color: #121212
+        }
+        .up {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 90px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        .crbox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 0px 0px 0px 22px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 5px;
+            top: 50%;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        }
+        .crbox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .crbox:hover .cr {
+            color: #121212
+        }
+        .cr {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 85px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        .rubox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 0px 23px 0px 0px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 630px;
+            top: 5px;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        } 
+        .rubox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .rubox:hover .ru {
+            color: #121212
+        }
+        .ru {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 110px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        .lebox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 0px 0px 0px 0px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 318px;
+            top: 50%;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        } 
+        .lebox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .lebox:hover .le {
+            color: #121212
+        }
+        .le {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 55px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        .gubox {
+            position: absolute;
+            background-color: #212121;
+            border-radius: 0px 0px 23px 0px;
+            width: 313px;
+            height: calc(50% - 5px);
+            left: 630px;
+            top: 50%;
+            overflow: hidden;
+            transition: background-image 0.3s ease;
+        } 
+        .gubox:hover {
+            background-size: 170% 170%;
+background-image: -webkit-linear-gradient(left, #FF973D, #FF3333);
+background-image: -o-linear-gradient(left, #FF973D, #FF3333);
+background-image: linear-gradient(to right, #FF973D, #FF3333);
+            animation: gradientAnimation 4s ease-in-out infinite;            
+        }
+        .gubox:hover .gu {
+            color: #121212
+        }
+        .gu {
+            position: absolute;
+            text-align: center;
+            font-family: "visb", sans-serif;
+            color: #FF973D;
+            font-size: 32px;
+            letter-spacing: -1px;
+            margin-left: 110px;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    </style>
+<div class="journeybox">
+    <h1 class="journey">Your journey starts here and now!</h1>
+    <h1 class="journeydesc">Just look at how much has happened since the release of Pentrum Studios. But the best is still ahead of us! Prepare for the next phase of our post-launch support that guarantees major content updates, events, rewards, and much more.</h1>
+    <div class="uerm">
+    <div class="updates">
+        <div class="updatesimg"><img src="images/journey/updates.png"></div>
+        <h1 class="updatestitle">Awesome updates!</h1>
+        <h1 class="updatesdesc">Check out the recent changes we (i) have made</h1>
+    </div>
+    <div class="events">
+        <div class="eventsimg"><img src="images/journey/events.png"></div>
+        <h1 class="eventstitle">Competitive events!</h1>
+        <h1 class="eventsdesc">Events can give you a lot of cool stuff, you know</h1>
+    </div>
+    <div class="rewards">
+        <div class="rewardsimg"><img src="images/journey/rewards.png"></div>
+        <h1 class="rewardstitle">Random rewards!</h1>
+        <h1 class="rewardsdesc">You can sometimes even get a reward just for joining</h1>
+    </div>
+    <div class="more">
+        <div class="moreimg"><img src="images/journey/more.png"></div>
+        <h1 class="moretitle">And much more!</h1>
+        <h1 class="moredesc">check out the navbar for more</h1>
+    </div>
+    <div class="updatesbellow"></div>
+    <div class="eventsbellow"></div>
+    <div class="rewardsbellow"></div>
+    <div class="morebellow"></div>
+    <div class="linustechtips"><img src="images/journey/4l0q1b.png"></div>
+</div>
+</div>
+<style>
+    .linustechtips {
+        position: absolute;
+        background-color: transparent;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10000;
+        height: 100%;
+        width: 700px;
+    }
+    .linustechtips > img {
+        position: absolute;
+        left: -180px;
+        bottom: -85px;
+        z-index: 10000;
+        height: 1000px;
+        width: 1000px;
+    }
+    .uerm {
+        margin-top: -5px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .journeybox {
+        position: absolute;
+        background-color: rgba(10, 10, 10, 0.7);
+        opacity: 1;
+        height: 700px;
+        width: 98%;
+        top: 150px;
+        left: 1%;
+        backdrop-filter: blur(250px);
+        z-index: 1;
+        border-radius: 25px;
+        box-shadow: 0px 0px 0px 0px #FF973D;
+        transition: box-shadow 0.3s ease;
+    }
+    .journeybox:hover {
+        box-shadow: 0px 0px 0px 5px #FF3333;
+    }
+    .journeybox:hover .journey {
+        color: #FF3333;
+        letter-spacing: 1.4px;
+    }
+    .journey {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        color: #FF973D;
+        white-space: nowrap;
+        z-index: 1;
+        letter-spacing: 0px;
+        font-size: 58px;
+        font-family: "visb", sans-serif;
+        top: -5px;
+        transition: color 0.4s linear, letter-spacing 0.4s ease;
+    }    
+    .journeybox:hover .linustechtips {
+        transition-delay: 120s;
+        opacity: 1;
+    }
+    .journeydesc {
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+        width: 50%;
+        color: #979797;
+        font-size: 23px;
+        font-family: "visb", sans-serif;
+        top: 100px;
+        left: 25%;
+    }  
+    .journey:hover {
+        color: #FF3333;
+        letter-spacing: 1.4px;
+    }
+    .updates {
+        position: absolute;
+        background-color: #161616;
+        z-index: 3;
+        height: 465px;
+        width: 440px;
+        left: 50%;
+        top: 220px;
+        box-shadow: 0px 0px 0px 0px #FF3333;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: -920px;
+        transition: box-shadow 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .updatesimg {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 25px 5px
+    }
+    .updatesimg > img {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        scale: 1.4;
+        transition: scale 0.3s cubic-bezier(.45,.01,.55,1.99);
+    }
+    .updatestitle {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-size: 42px;
+        letter-spacing: -1.4px;
+        font-family: "visb", sans-serif;
+        color: #FF973D;
+        top: 200px;
+        transition: color 0.2s ease;
+    }
+    .updatesdesc {
+        position: absolute;
+        text-align: center;
+        width: 70%;
+        font-size: 24px;
+        left: 15%;
+        letter-spacing: 0px;
+        font-family: "visr", sans-serif;
+        color: #7E7E7E;
+        top: 300px;        
+    }
+    .updates:hover {
+        box-shadow: 0px 0px 0px 3px #FF3333;
+        transform: scale(1.08);
+        z-index: 5;
+    }
+    .updates:hover .updatestitle {
+        color: #FF3333;
+    }
+    .updates:hover .updatesimg > img {
+        scale: 1.1;
+    }
+    .events {
+        position: absolute;
+        background-color: #161616;
+        z-index: 3;
+        height: 465px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: -465px;
+        box-shadow: 0px 0px 0px 0px #FF3333;
+        transition: box-shadow 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .eventsimg {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 25px 5px
+    }
+    .eventsimg > img {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        scale: 1.4;
+        transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+    }
+    .eventstitle {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-size: 42px;
+        letter-spacing: -1.4px;
+        font-family: "visb", sans-serif;
+        color: #FF973D;
+        top: 200px;
+        transition: color 0.2s ease;
+    }
+    .eventsdesc {
+        position: absolute;
+        text-align: center;
+        width: 70%;
+        font-size: 24px;
+        left: 15%;
+        letter-spacing: 0px;
+        font-family: "visr", sans-serif;
+        color: #7E7E7E;
+        top: 300px;        
+    }
+    .events:hover {
+        box-shadow: 0px 0px 0px 3px #FF3333;
+        transform: scale(1.08);
+        z-index: 5;
+    }
+    .events:hover .eventstitle {
+        color: #FF3333;
+    }
+    .events:hover .eventsimg > img {
+        scale: 1.1;
+    }
+    .rewards {
+        position: absolute;
+        background-color: #161616;
+        z-index: 3;
+        height: 465px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: 0px;
+        box-shadow: 0px 0px 0px 0px #FF3333;
+        transition: box-shadow 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .rewardsimg {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 25px 5px
+    }
+    .rewardsimg > img {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        scale: 1.4;
+        top: -25px;
+        transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+    }
+    .rewardstitle {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-size: 42px;
+        letter-spacing: -1.4px;
+        font-family: "visb", sans-serif;
+        color: #FF973D;
+        top: 200px;
+        transition: color 0.2s ease;
+    }
+    .rewardsdesc {
+        position: absolute;
+        text-align: center;
+        width: 70%;
+        font-size: 24px;
+        left: 15%;
+        letter-spacing: 0px;
+        font-family: "visr", sans-serif;
+        color: #7E7E7E;
+        top: 300px;        
+    }
+    .rewards:hover {
+        box-shadow: 0px 0px 0px 3px #FF3333;
+        transform: scale(1.08);
+        z-index: 5;
+    }
+    .rewards:hover .rewardstitle {
+        color: #FF3333;
+    }
+    .rewards:hover .rewardsimg > img {
+        scale: 1.1;
+    }
+    .more {
+        position: absolute;
+        background-color: #161616;
+        z-index: 3;
+        height: 465px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: 465px;
+        box-shadow: 0px 0px 0px 0px #FF3333;
+        transition: box-shadow 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .moreimg {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 25px 5px;
+    }
+    .moreimg > img {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        scale: 1.4;
+        top: -25px;
+        transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+    }
+    .moretitle {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-size: 42px;
+        letter-spacing: -1.4px;
+        font-family: "visb", sans-serif;
+        color: #FF973D;
+        top: 200px;
+        transition: color 0.2s ease;
+    }
+    .moredesc {
+        position: absolute;
+        text-align: center;
+        width: 70%;
+        font-size: 24px;
+        left: 15%;
+        letter-spacing: 0px;
+        font-family: "visr", sans-serif;
+        color: #7E7E7E;
+        top: 300px;        
+    }
+    .more:hover {
+        box-shadow: 0px 0px 0px 3px #FF3333;
+        transform: scale(1.08);
+        z-index: 5;
+    }
+    .more:hover .moretitle {
+        color: #FF3333;
+    }
+    .more:hover .moreimg > img {
+        scale: 1.1;
+    }
+    .updatesbellow {
+        position: absolute;
+         background-color: transparent;
+        backdrop-filter: blur(15px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 4;
+        height: 0px;
+        width: 440px;
+        left: 50%;
+        top: 220px;
+        box-shadow: 0px 0px 0px 3px #5a1010;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: -920px;
+        transition: height 1s ease, opacity 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .eventsbellow {
+        position: absolute;
+        background-color: transparent;
+        backdrop-filter: blur(15px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 4;
+        height: 0px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: -465px;
+        box-shadow: 0px 0px 0px 3px #5a1010;
+        transition: height 1s ease, opacity 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .rewardsbellow {
+        position: absolute;
+        background-color: transparent;
+        backdrop-filter: blur(15px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 4;
+        height: 0px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: 0px;
+        box-shadow: 0px 0px 0px 3px #5a1010;
+        transition: height 1s ease, opacity 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .morebellow {
+        position: absolute;
+        background-color: transparent;
+        backdrop-filter: blur(15px);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 4;
+        height: 0px;
+        width: 450px;
+        left: 50%;
+        top: 220px;
+        overflow: hidden;
+        border-radius: 25px;
+        margin-left: 465px;
+        box-shadow: 0px 0px 0px 3px #5a1010;
+        transition: height 1s ease, opacity 0.5s ease, transform 0.4s cubic-bezier(.45,.01,.6,2);
+    }
+    .updates:hover ~ .eventsbellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+    .updates:hover ~ .rewardsbellow {
+        transition-delay: 0.2s;
+        opacity: 1;
+        height: 465px;
+    }
+    .updates:hover ~ .morebellow {
+        transition-delay: 0.3s;
+        opacity: 1;
+        height: 465px;
+    }
+    .events:hover ~ .updatesbellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+    .events:hover ~ .rewardsbellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+    .events:hover ~ .morebellow {
+        transition-delay: 0.2s;
+        opacity: 1;
+        height: 465px;
+    }
+    .rewards:hover ~ .updatesbellow {
+        transition-delay: 0.2s;
+        opacity: 1;
+        height: 465px;
+    }
+    .rewards:hover ~ .eventsbellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+    .rewards:hover ~ .morebellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+    .more:hover ~ .updatesbellow {
+        transition-delay: 0.3s;
+        opacity: 1;
+        height: 465px;
+    }
+    .more:hover ~ .eventsbellow {
+        transition-delay: 0.2s;
+        opacity: 1;
+        height: 465px;
+    }
+    .more:hover ~ .rewardsbellow {
+        transition-delay: 0.1s;
+        opacity: 1;
+        height: 465px;
+    }
+</style>
+<div class="display">
+    <div class="onebox">
+        <div class="oneimg"><img src="images/journey/strong.png"></div>
+        <h1 class="onetitle">Only the strongest will survive</h1>
+        <h1 class="onedesc">Having good gear is not enough, you have to be perfect. The most important thing is to be 1 step ahead of the enemies.</h1>
+    </div>
+    <div class="twobox">
+        <div class="twoimg"><img src="images/journey/night.png"></div>
+        <h1 class="twotitle">Night is for the mobs</h1>
+        <h1 class="twodesc">At night monsters spawn more frequently and are a lot stronger, and might drop double loot.</h1>
+    </div>
+    <div class="thebox">
+        <div class="theimg"><img src="images/journey/chest.png"></div>
+        <h1 class="thetitle">Exploration will set you free</h1>
+        <h1 class="thedesc">Explore hundreds of custom structures and biomes. Awesome loot is waiting for you.</h1>
+    </div>
+    <div class="foubox">
+        <div class="fouimg"><img src="images/journey/friends.png"></div>
+        <h1 class="foutitle">Survive together</h1>
+        <h1 class="foudesc">Make a team and come face-to-face with dangers that a single person would not be able to.</h1>
+    </div>
+    </div>
+    <style>
+        .display {
+            position: absolute;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(250px);
+            height: 1050px;
+            width: 100%;
+            left: 0px;
+            top: 900px;
+            z-index: 3;
+            box-shadow: 0px 0px 15px 1px #000000
+         }
+        .onebox {
+            position: absolute;
+            background-color: #161616;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 500px;
+            width: 900px;
+            top: 15px;
+            left: calc(50% - 905px);
+            transition: transform 0.4s cubic-bezier(.44,0,.26,1.72), box-shadow 0.3s ease, z-index 0s linear 0.1s;
+        }
+        .oneimg {
+            position: absolute;
+            box-shadow: 0px 0px 25px 5px;
+            background-color: #212121;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 300px;
+            width: 100%;
+        }
+        .oneimg > img {
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            top: -50px;
+            left: -50px;
+            transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+        }
+        .onetitle {
+            position: absolute;
+            color: #FF973D;
+            top: 300px;
+            left: 25px;
+            font-size: 45px;
+            font-family: "visb", sans-serif;
+            letter-spacing: -1.4px;
+            transition: color 0.2s ease;
+        }
+        .onedesc {
+            position: absolute;
+            color: #7E7E7E;
+            top: 380px;
+            left: 25px;
+            width: 560px;
+            font-size: 20px;
+            font-family: "visr", sans-serif;
+        }
+        .twobox {
+            position: absolute;
+            background-color: #161616;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 500px;
+            width: 900px;
+            top: 15px;
+            left: calc(50% + 5px);
+            transition: transform 0.4s cubic-bezier(.44,0,.26,1.72), box-shadow 0.3s ease, z-index 0s linear 0.1s;
+        }
+        .twoimg {
+            position: absolute;
+            box-shadow: 0px 0px 25px 5px;
+            background-color: #212121;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 300px;
+            width: 100%;
+        }
+        .twoimg > img {
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            top: -50px;
+            left: -50px;
+            transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+        }
+        .twotitle {
+            position: absolute;
+            color: #FF973D;
+            top: 300px;
+            left: 25px;
+            font-size: 45px;
+            font-family: "visb", sans-serif;
+            letter-spacing: -1.4px;
+            transition: color 0.2s ease;
+        }
+        .twodesc {
+            position: absolute;
+            color: #7E7E7E;
+            top: 380px;
+            left: 25px;
+            width: 460px;
+            font-size: 20px;
+            font-family: "visr", sans-serif;
+        }
+        .thebox {
+            position: absolute;
+            background-color: #161616;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 500px;
+            width: 900px;
+            top: 525px;
+            left: calc(50% - 905px);
+            transition: transform 0.4s cubic-bezier(.44,0,.26,1.72), box-shadow 0.3s ease, z-index 0s linear 0.1s;
+        }
+        .theimg {
+            position: absolute;
+            box-shadow: 0px 0px 25px 5px;
+            background-color: #212121;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 300px;
+            width: 100%;
+        }
+        .theimg > img {
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            top: -50px;
+            left: -50px;
+            transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+        }
+        .thetitle {
+            position: absolute;
+            color: #FF973D;
+            top: 300px;
+            left: 25px;
+            font-size: 45px;
+            font-family: "visb", sans-serif;
+            letter-spacing: -1.4px;
+            transition: color 0.2s ease;
+        }
+        .thedesc {
+            position: absolute;
+            color: #7E7E7E;
+            top: 380px;
+            left: 25px;
+            width: 460px;
+            font-size: 20px;
+            font-family: "visr", sans-serif;
+        }
+        .foubox {
+            position: absolute;
+            background-color: #161616;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 500px;
+            width: 900px;
+            top: 525px;
+            left: calc(50% + 5px);
+            transition: transform 0.4s cubic-bezier(.44,0,.26,1.72), box-shadow 0.3s ease, z-index 0s linear 0.1s;
+        }
+        .fouimg {
+            position: absolute;
+            box-shadow: 0px 0px 25px 5px;
+            background-color: #212121;
+            overflow: hidden;
+            border-radius: 25px;
+            height: 300px;
+            width: 100%;
+        }
+        .fouimg > img {
+            position: absolute;
+            height: 400px;
+            width: 1000px;
+            top: -60px;
+            left: -50px;
+            transition: scale 0.3s cubic-bezier(.45,.01,.35,2.2);
+        }
+        .foutitle {
+            position: absolute;
+            color: #FF973D;
+            top: 300px;
+            left: 25px;
+            font-size: 45px;
+            font-family: "visb", sans-serif;
+            letter-spacing: -1.4px;
+            transition: color 0.2s ease;
+        }
+        .foudesc {
+            position: absolute;
+            color: #7E7E7E;
+            top: 380px;
+            left: 25px;
+            width: 470px;
+            font-size: 20px;
+            font-family: "visr", sans-serif;
+        }
+        .onebox:hover {
+            box-shadow: 0px 0px 0px 3px #FF3333;
+            transform: scale(1.02);
+            transition-delay: 0.1s;
+            z-index: 5;
+        }
+        .onebox:hover .onetitle {
+            color: #FF3333;
+        }
+        .onebox:hover .oneimg > img {
+            transition-delay: 0.2s;
+            scale: 1.1;
+        }
+        .twobox:hover {
+            box-shadow: 0px 0px 0px 3px #FF3333;
+            transform: scale(1.02);
+            transition-delay: 0.1s;
+            z-index: 5;
+        }
+        .twobox:hover .twotitle {
+            color: #FF3333;
+        }
+        .twobox:hover .twoimg > img {
+            transition-delay: 0.2s;
+            scale: 1.2;
+        }
+        .thebox:hover {
+            box-shadow: 0px 0px 0px 3px #FF3333;
+            transform: scale(1.02);
+            transition-delay: 0.1s;
+            z-index: 5;
+        }
+        .thebox:hover .thetitle {
+            color: #FF3333;
+        }
+        .thebox:hover .theimg > img {
+            transition-delay: 0.2s;
+            scale: 1.1;
+        }
+        .foubox:hover {
+            box-shadow: 0px 0px 0px 3px #FF3333;
+            transform: scale(1.02);
+            transition-delay: 0.1s;
+            z-index: 5;
+        }
+        .foubox:hover .foutitle {
+            color: #FF3333;
+        }
+        .foubox:hover .fouimg > img {
+            transition-delay: 0.2s;
+            scale: 1.1;
+        }
+    
+    </style>
+</body>
+</html>
+

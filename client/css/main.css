@@ -1,0 +1,415 @@
+body {
+    background: rgba(0,0,0,1);
+}
+
+.main {
+    position: absolute;
+    background-color: rgba(0,0,0,1);
+    width: calc(100% - 20px);
+    overflow: hidden;
+    height: calc(100% - 20px);
+    left: 10px;
+    top: 10px;
+    scale: 0.99;
+}
+.main > img {
+    width: 100%;
+    z-index: 1;
+}
+
+.titlebox {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba();
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    width: 300px;
+    height: 70px;
+    top: 10px;
+    left: 10px;
+
+    z-index: 2;
+}
+.titledec {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    height: 100%;
+    width: 7px;
+}
+.title {
+    position: absolute;
+    color: white;
+    font-family: mint,sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 44px;
+    top: -10px;
+    left: 20px;
+}
+.tabgui {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    width: 300px;
+    height: 225px;
+    top: 90px;
+    left: 10px;
+
+    z-index: 2;
+}
+.tabguitext {
+    position: absolute;
+    color: white;
+    font-family: mint,sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 34px;
+    top: -10px;
+    left: 20px;
+}
+.tabguicombat {
+    margin-left: 25px;
+}
+.tabguimovement {
+    color: rgba(200,200,200,0.8);
+}
+.tabguirender {
+    color: rgba(200,200,200,0.8);
+}
+.tabguiplayer {
+    color: rgba(200,200,200,0.8);
+}
+.tabguimisc {
+    color: rgba(200,200,200,0.8);
+}
+.tabguipersonalise {
+    color: rgba(200,200,200,0.8);
+}
+.tabguisel {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    border-radius: 25px;
+    height: 50px;
+    width: 7px;
+}
+
+
+.hotbar {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    width: 750px;
+    height: 30px;
+    bottom: 90px;
+    left: 10px;
+
+    z-index: 2;
+}
+.hotbarhealth {
+    position: absolute;
+    background-color: rgba(50,0,0,1);
+    width: calc(100% - 10px);
+    border-radius: 8px;
+    height: 10px;
+    left: 5px;
+    bottom: 5px;
+}
+.hotbarhealthfull {
+    position: absolute;
+    background-color: rgba(150,0,0,1);
+    width: 90%;
+    border-radius: 8px;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+.hotbararmor {
+    position: absolute;
+    background-color: rgba(20,20,20,1);
+    width: calc(100% - 10px);
+    border-radius: 8px;
+    height: 5px;
+    left: 5px;
+    bottom: 18px;
+}
+.hotbararmorfull {
+    position: absolute;
+    background-color: rgba(150,150,150,1);
+    width: 92%;
+    border-radius: 8px;
+    height: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+
+.items {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    aspect-ratio: 10/1;
+    height: 75px;
+    bottom: 10px;
+    left: 10px;
+
+    z-index: 3;
+}
+.itemsel {
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6);
+    aspect-ratio: 1/1;
+    height: 75px;
+    left: 70%;
+
+    z-index: 3;
+}
+
+.notify {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    aspect-ratio: 4/1;
+    height: 100px;
+    top: 10px;
+    right: 10px;
+
+    z-index: 3;
+}
+.notifytext {
+    position: absolute;
+    color: white;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1.2px;
+    font-size: 34px;
+    top: -5px;
+    left: 30px;
+}
+.notifydec {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    height: 7px;
+    width: 100%;
+    bottom: -20px;
+}
+
+.info {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    aspect-ratio: 3.2/1;
+    height: 90px;
+    bottom: 10px;
+    right: 10px;
+
+    z-index: 3;
+}
+.fps {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    letter-spacing: 1px;
+    width: 100%;
+    font-size: 30px;
+    bottom: 30px;
+    right: 10px;
+}
+.fps1 {
+    color: rgba(200,200,200,0.8);
+}
+.coords {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    bottom: 5px;
+    right: 10px;
+}
+.coords1 {
+    color: rgba(200,200,200,0.8);
+}
+.biome {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    bottom: -20px;
+    right: 10px;
+}
+.biome1 {
+    color: rgba(200,200,200,0.8);
+}
+.session {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    width: 300px;
+    height: 90px;
+    top: 325px;
+    left: 10px;
+
+    z-index: 3;
+}
+.sessiondec {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    height: 100%;
+    width: 7px;
+}
+.server {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: left;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: -10px;
+    left: 20px;
+}
+.killdead {
+    position: absolute;
+    color: rgba(150,150,150,1);
+    text-align: left;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 24px;
+    top: 23px;
+    left: 20px;
+}
+.playtime {
+    position: absolute;
+    color: rgba(150,150,150,1);
+    text-align: left;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 24px;
+    top: 45px;
+    left: 20px;
+}
+.arraylist {
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    width: 230px;
+    height: 150px;
+    top: 120px;
+    right: 10px;
+
+    z-index: 3;
+}
+.arraydec {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    height: 100%;
+    width: 7px;
+    right: 0px;
+}
+.vel {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: -15px;
+    right: 20px;
+}
+.vel2 {
+    color: rgba(200,200,200,1);
+}
+.hud {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: 74px;
+    right: 20px;
+}
+.hud2 {
+    color: rgba(200,200,200,1);
+}
+.arsession {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: 15px;
+    right: 20px;
+}
+.arsession2 {
+    color: rgba(200,200,200,1);
+}
+.arinfo {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: 102px;
+    right: 20px;
+}
+.arinfo2 {
+    color: rgba(200,200,200,1);
+}
+.artabgui {
+    position: absolute;
+    color: rgba(255,255,255,1);
+    text-align: right;
+    font-family: mint,sans-serif;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 30px;
+    top: 44px;
+    right: 20px;
+}
+.artabgui2 {
+    color: rgba(200,200,200,1);
+}
+
+

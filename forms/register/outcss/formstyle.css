@@ -1,0 +1,307 @@
+body {
+    background-color: rgba(25,25,25,1);
+}
+
+.main {
+    position: absolute;
+    background-color: rgba(25,25,25,1);
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0,7);
+    width: calc(70%);
+    height: 1050px;
+    left: 15%;
+
+}
+.essentials {
+    position: absolute;
+    background-color: rgba(15,15,15,1);
+    border-radius: 15px;
+    width: calc(100% - 70px);
+    left: 35px;
+    top: 110px;
+    height: calc(100% - 135px);
+}
+
+.emailtext {
+    position: absolute;
+    color: rgba(200,200,200,1);
+    font-size: 34px;
+    font-family: mint,sans-serif;
+    top: 30px;
+    left: 50px;
+}
+.emaildesc {
+    position: absolute;
+    color: rgba(120,120,120,1);
+    font-size: 20px;
+    font-family: mint,sans-serif;
+    top: 70px;
+    left: 50px;
+}
+.email {
+    position: absolute;
+    color: rgba(250,250,250,1);
+    border-radius: 15px;
+    border: 0px solid;
+    box-shadow: 0px 0px 0px 0px rgba(150,0,0,1);
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    padding-left: 25px;
+
+    left: 50px;
+    top: 120px;
+    width: calc(100% - 120px);
+    height: 50px;
+    background-color: rgba(30,30,30,1);
+
+    transition: box-shadow 0.3s ease;
+}
+.email:focus {
+    outline: 0;
+    box-shadow: 0px 3px 0px 0px #ff41bd;
+}
+.discordtext {
+    position: absolute;
+    color: rgba(200,200,200,1);
+    font-size: 34px;
+    font-family: mint,sans-serif;
+    top: 190px;
+    left: 50px;
+}
+.discorddesc {
+    position: absolute;
+    color: rgba(120,120,120,1);
+    font-size: 20px;
+    font-family: mint,sans-serif;
+    top: 230px;
+    left: 50px;
+}
+.discord {
+    position: absolute;
+    color: rgba(250,250,250,1);
+    border-radius: 15px;
+    border: 0px solid;
+    box-shadow: 0px 0px 0px 0px white;
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    padding-left: 25px;
+
+    left: 50px;
+    top: 280px;
+    width: calc(100% - 120px);
+    height: 50px;
+    background-color: rgba(30,30,30,1);
+
+    transition: box-shadow 0.3s ease;
+}
+.discord:focus {
+    outline: 0;
+    box-shadow: 0px 3px 0px 0px #ff41bd;
+}
+.usernametext {
+    position: absolute;
+    color: rgba(200,200,200,1);
+    font-size: 34px;
+    font-family: mint,sans-serif;
+    top: 350px;
+    left: 50px;
+}
+.usernamedesc {
+    position: absolute;
+    color: rgba(120,120,120,1);
+    font-size: 20px;
+    font-family: mint,sans-serif;
+    top: 390px;
+    left: 50px;
+}
+.username {
+    position: absolute;
+    color: rgba(250,250,250,1);
+    border-radius: 15px;
+    border: 0px solid;
+    box-shadow: 0px 0px 0px 0px rgba(150,0,0,1);
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    padding-left: 25px;
+
+    left: 50px;
+    top: 440px;
+    width: calc(100% - 120px);
+    height: 50px;
+    background-color: rgba(30,30,30,1);
+
+    transition: box-shadow 0.3s ease;
+}
+.username:focus {
+    outline: 0;
+    box-shadow: 0px 3px 0px 0px #ff41bd;
+}
+.passwordtext {
+    position: absolute;
+    color: rgba(200,200,200,1);
+    font-size: 34px;
+    font-family: mint,sans-serif;
+    top: 510px;
+    left: 50px;
+}
+.passworddesc {
+    position: absolute;
+    color: rgba(120,120,120,1);
+    font-size: 20px;
+    font-family: mint,sans-serif;
+    top: 552px;
+    left: 50px;
+}
+.password {
+    position: absolute;
+    color: rgba(250,250,250,1);
+    border-radius: 15px;
+    border: 0px solid;
+    box-shadow: 0px 0px 0px 0px rgba(150,0,0,1);
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    padding-left: 25px;
+
+    left: 50px;
+    top: 605px;
+    width: calc(100% - 120px);
+    height: 50px;
+    background-color: rgba(30,30,30,1);
+
+    transition: box-shadow 0.3s ease;
+}
+.password:focus {
+    outline: 0;
+    box-shadow: 0px 3px 0px 0px #ff41bd;
+}
+.publictext {
+    position: absolute;
+    color: rgba(200,200,200,1);
+    font-size: 34px;
+    font-family: mint,sans-serif;
+    top: 670px;
+    left: 50px;
+}
+.publicdesc {
+    position: absolute;
+    color: rgba(120,120,120,1);
+    font-size: 20px;
+    font-family: mint,sans-serif;
+    top: 710px;
+    left: 50px;
+}
+.public {
+    position: absolute;
+    color: rgba(250,250,250,1);
+    border-radius: 15px;
+    border: 0px solid;
+    box-shadow: 0px 0px 0px 0px white;
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    padding-left: 25px;
+
+    left: 50px;
+    top: 760px;
+    width: calc(100% - 120px);
+    height: 50px;
+    background-color: rgba(30,30,30,1);
+
+    transition: box-shadow 0.3s ease;
+}
+.public:focus {
+    outline: 0;
+    box-shadow: 0px 3px 0px 0px #ff41bd;
+}
+.intro {
+    position: absolute;
+    color: white;
+    font-size: 64px;
+    font-family: mint,sans-serif;
+    top: -15px;
+    left: 35px;
+}
+.introcolor {
+    background: linear-gradient(270deg, #5957d7, #ff41bd);
+    background-size: 100%, 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.submit {
+    position: absolute;
+    background-color: rgba(30,30,30,1);
+    box-shadow: 0px 0px 0px 0px #ff41bd;
+    border-radius: 15px;
+    border: 0px solid;
+    padding: 20px 50px 15px 50px;
+    opacity: 1;
+    color: rgba(200,200,200,1);
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    bottom: 10px;
+    left: 50px;
+    transition: bottom 0.1s ease, background-color 0.5s ease, box-shadow 0.1s ease, color 0.3s ease;
+}
+.submit:hover {
+    bottom: 15px;
+    background-color: rgba(40,40,40,1);
+    box-shadow:
+        0px 5px 0px 0px #ff41bd,
+        0px 10px 25px 0px #ff41bd;
+    transition:
+    box-shadow 2s, 0.1s;
+    color: #ff41bd;
+}
+.pp {
+    position: absolute;
+    background-color: rgba(30,30,30,1);
+    box-shadow: 0px 0px 0px 0px #ff41bd;
+    border-radius: 15px;
+    border: 0px solid;
+    padding: 20px 50px 15px 50px;
+    opacity: 1;
+    color: rgba(200,200,200,1);
+    font-weight: 500;
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    bottom: -7px;
+    right: 50px;
+    border-radius: 15px;
+    transition: bottom 0.1s ease, background-color 0.5s ease, box-shadow 0.1s ease, color 0.3s ease;
+}
+.pp:hover {
+    bottom: -2px;
+    background-color: rgba(40,40,40,1);
+    box-shadow:
+    0px 5px 0px 0px #ff41bd,
+    0px 10px 25px 0px #ff41bd;
+    transition:
+    box-shadow 2s, 0.1s;
+    color: #ff41bd;
+}
+.tos {
+    position: absolute;
+    background-color: rgba(30,30,30,1);
+    box-shadow: 0px 0px 0px 0px #ff41bd;
+    border-radius: 15px;
+    border: 0px solid;
+    padding: 20px 50px 15px 50px;
+    opacity: 1;
+    font-weight: 500;
+    color: rgba(200,200,200,1);
+    font-size: 26px;
+    font-family: mint,sans-serif;
+    bottom: -7px;
+    right: 290px;
+    border-radius: 15px;
+    transition: bottom 0.1s ease, background-color 0.5s ease, box-shadow 0.1s ease, color 0.3s ease;
+}
+.tos:hover {
+    bottom: -2px;
+    background-color: rgba(40,40,40,1);
+    box-shadow:
+    0px 5px 0px 0px #ff41bd,
+    0px 10px 25px 0px #ff41bd;
+    transition:
+    box-shadow 2s, 0.1s;
+    color: #ff41bd;
+}

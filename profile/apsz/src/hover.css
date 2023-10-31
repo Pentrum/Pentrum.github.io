@@ -1,0 +1,24 @@
+.modify:hover {
+    opacity: 1;
+}
+.modify:hover > img {
+    scale: 1.1;
+}
+.coins:hover .coinstut {
+    transition-delay: 1s;
+    opacity: 1;
+    top: 150px;
+}
+.penalty:hover {
+    width: 220px;
+    height: 100px;
+}
+.penalty:hover .active1 {
+    opacity: 1;
+}
+.profilepicture:hover {
+    box-shadow: 0px 0px 0px 10px transparent;
+}
+.profilepicture:hover ~ .profilepicture2 > img {
+    filter: blur(15px);
+}

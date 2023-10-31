@@ -1,0 +1,384 @@
+
+
+
+.main {
+    position: absolute;
+    background-color: var(--bg);
+    height: calc(100% - 200px - 25px);
+    width: calc(100% - 50px);
+    overflow-Y: hidden;
+
+    border-radius: 25px;
+
+    bottom: 25px;
+    left: 25px;
+}
+
+.profilemain {
+    position: absolute;
+    background-color: var(--bg2);
+    height: 200px;
+    width: 100%;
+
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.7);
+}
+.profilepicture {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 6;
+
+    width: 250px;
+    height: 248px;
+
+    border-radius: 25px;
+    transition: box-shadow 0.1s ease;
+}
+.profilepicture > img {
+    border-radius: 25px;
+    opacity: 1;
+
+    height: 100%;
+    width: 100%;
+}
+.profilepicture2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 1;
+    top: 100px;
+    left: 100px;
+    box-shadow:
+    0px 0px 0px 10px var(--bg2);
+
+    width: 250px;
+    height: 248px;
+
+    border-radius: 25px;
+}
+.profilepicture2 > img {
+    border-radius: 25px;
+    filter: blur(0px);
+    opacity: 1;
+
+    height: 100%;
+    width: 100%;
+    transition: filter 0.5s ease;
+}
+.username {
+    position: absolute;
+    color: var(--theme);
+
+    font-family: mint,sans-serif;
+    font-size: 90px;
+
+    left: 400px;
+}
+
+.tags {
+    position: absolute;
+    background-color: var(--bg);
+    height: calc(100% - 55px);
+    aspect-ratio: 3.3/1;
+    border-radius: 15px;
+    top: 30px;
+    right: 30px;
+}
+
+.owner {
+    position: absolute;
+    background-color: var(--bg2);
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    top: 80px;
+    right: 15px;
+    overflow: hidden;
+}
+.ownerdec {
+    position: absolute;
+    background-color: #ff3f3f;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.ownertext {
+    position: absolute;
+    color: #ff3f3f;
+
+    font-family: mint,sans-serif;
+    font-size: 38px;
+    top: -17px;
+    left: 75px;
+}
+
+.dev {
+    position: absolute;
+    background-color: var(--bg2);
+    height: 50px;
+    width: 230px;
+    border-radius: 10px;
+    top: 15px;
+    right: 15px;
+    overflow: hidden;
+}
+.devdec {
+    position: absolute;
+    background-color: #38a825;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.devtext {
+    position: absolute;
+    color: #38a825;
+
+    font-family: mint,sans-serif;
+    font-size: 38px;
+    top: -17px;
+    left: 75px;
+}
+.member {
+    position: absolute;
+    background-color: var(--bg2);
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    top: 15px;
+    right: 262px;
+    overflow: hidden;
+}
+.memberdec {
+    position: absolute;
+    background-color: #45e4f3;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.membertext {
+    position: absolute;
+    color: #45e4f3;
+
+    font-family: mint,sans-serif;
+    font-size: 38px;
+    top: -17px;
+    left: 70px;
+}
+.beta {
+    position: absolute;
+    background-color: var(--bg2);
+    height: 50px;
+    width: 170px;
+    border-radius: 10px;
+    top: 80px;
+    right: 230px;
+    overflow: hidden;
+}
+.betadec {
+    position: absolute;
+    background-color: #ff953f;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.betatext {
+    position: absolute;
+    color: #ff953f;
+
+    font-family: mint,sans-serif;
+    font-size: 38px;
+    top: -17px;
+    left: 75px;
+}
+
+.about {
+    position: absolute;
+    background-color: var(--bg2);
+    width: 500px;
+    height: 150px;
+    top: 215px;
+    overflow: hidden;
+
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+
+    left: 15px;
+}
+.aboutme {
+    position: absolute;
+    color: var(--theme);
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,1);
+    white-space: nowrap;
+
+    font-family: mint,sans-serif;
+    font-size: 38px;
+
+    padding: 10px 100% 5px 25px;
+
+    top: -25px;
+}
+.aboutmetext {
+    position: absolute;
+    color: rgba(150,150,150,1);
+
+    font-family: mint,sans-serif;
+    font-size: 30px;
+    top: 50px;
+    left: 25px;
+}
+.status {
+    position: absolute;
+    background-color: var(--bg2);
+    width: calc(100% - 545px);
+    height: 150px;
+    top: 215px;
+
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+
+    right: 15px;
+}
+.coins {
+    position: absolute;
+    background-color: var(--bg);
+    height: calc(100% - 20px);
+    width: calc(50% - 15px);
+
+    border-radius: 15px;
+
+    left: 10px;
+    top: 10px;
+}
+.coinsme {
+    color: var(--theme);
+    text-align: center;
+    margin-top: 45px;
+
+    font-family: mint,sans-serif;
+    font-size: 55px;
+}
+.coinsme2 {
+    color: white;
+}
+.coinstut {
+    pointer-events: none;
+    position: absolute;
+    background-color: var(--bg2);
+    opacity: 0;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    top: 120px;
+    transition: top 1.5s ease, opacity 0.7s ease 0.4s;
+}
+.coinstutdec {
+    position: absolute;
+    background-color: var(--theme);
+    top: 0px;
+    height: 7px;
+    width: 100%;
+}
+.coinstut2 {
+    color: rgba(150,150,150,1);
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 10%;
+    width: 80%;
+
+    font-family: mint,sans-serif;
+    font-size: 30px;
+}
+.coinscolor {
+    color: var(--theme);
+}
+.time {
+    position: absolute;
+    background-color: var(--bg);
+    height: calc(100% - 20px);
+    width: calc(50% - 15px);
+
+    border-radius: 15px;
+
+    right: 10px;
+    top: 10px;
+}
+.timeme {
+    color: var(--theme);
+    text-align: center;
+    margin-top: 45px;
+
+    font-family: mint,sans-serif;
+    font-size: 55px;
+}
+.timeme2 {
+    color: white;
+}
+
+.modify {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.2;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    right: 10px;
+    top: 10px;
+    transition: opacity 0.3s ease;
+}
+.modify > img {
+    position: absolute;
+    height: 35px;
+    top: 7.5px;
+    left: 7.5px;
+    transition: scale 0.7s cubic-bezier(.45,.01,.44,1.4);
+}
+
+.penalty {
+    position: absolute;
+    background-color: var(--bg2);
+    overflow: hidden;
+    opacity: 1;
+    height: 50px;
+    width: 180px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+    left: 10px;
+    bottom: 10px;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+.penalty2 {
+    color: var(--theme);
+    font-family: mint,sans-serif;
+
+    text-align: center;
+
+    margin-top: 12px;
+}
+.active1 {
+    position: absolute;
+    background-color: var(--bg);
+    opacity: 0;
+    height: 40px;
+    width: calc(100% - 20px);
+    border-radius: 25px;
+    left: 10px;
+    top: 50px;
+    transition: opacity 0.3s ease 0.5s;
+}
+.active1dec {
+    position: absolute;
+    background-color: black;
+    height: calc(100% - 5px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    animation: penaltyFlash 3s infinite;
+    top: 2.5px;
+    left: 2.5px;
+}
+.active1text {
+    position: absolute;
+    color: rgba(150,150,150,1);
+    font-family: mint,sans-serif;
+    font-size: 25px;
+
+    margin-top: 5%;
+    left: 50px;
+}

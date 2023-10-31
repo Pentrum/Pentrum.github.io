@@ -1,0 +1,351 @@
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+body {
+    background-color: var(--bg);
+    height: 200vh;
+    margin: 0rem;
+    overflow-x: hidden;
+    cursor: none;
+}
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+#jerry {
+    background-color: white;
+    height: 1vmax;
+    aspect-ratio: 1;
+    position: fixed;
+    backdrop-filter: blur(25px);
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+    opacity: 0.5;
+
+pointer-events: none;
+z-index: 10000;
+
+    transition: background-color 0.3s ease, transform 1s ease;
+}
+#fatjerry {
+    background-color: var(--pri);
+    height: 25vmax;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+    opacity: 0.3;
+
+    pointer-events: none;
+    z-index: 1;
+
+    transition: background-color 0.3s ease, transform 1s ease;
+}
+#blurjerry {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+
+    backdrop-filter: blur(9vmax);
+    z-index: 2;
+}
+
+body::-webkit-scrollbar {
+    width: 0vmax;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--out);
+    border-radius: 50vmax;
+
+    transition: background-color 0.3s ease;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--pri);
+    transition: background-color 0.3s ease;
+}
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::selection {
+    background-color: rgba(42, 12, 17,1);
+    color: white;
+}
+
+.nav {
+    position: fixed;
+    background-color: rgba(10,10,10,0.5);
+    height: 4.5vmax;
+    width: 98.6vmax;
+    z-index: 100;
+
+    border-radius: 0.5vmax;
+
+    backdrop-filter: blur(25px);;
+
+    left: 0.7vmax;
+    top: 0.7vmax;
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    
+}
+.navimg {
+    position: absolute;
+    height: 100%;
+    scale: 0.8;
+
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.navimg:hover {
+    scale: 0.87;
+}
+.server, .client, .forum, .services {
+    position: absolute;
+    display: flex;
+    color: var(--txt);
+    border-radius: 0.5vmax;
+    padding-left: 0.5vmax;
+    padding-right: 0.5vmax;
+    padding-top: 0.25vmax;
+    padding-bottom: 0.25vmax;
+
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+
+    top: 0.5vmax;
+    margin-left: 5vmax;
+
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.1s ease, background-color 1s ease;
+}
+.client {
+    margin-left: 10.3vmax;
+}
+.forum {
+    margin-left: 15.6vmax;
+}
+.services {
+    margin-left: 21.9vmax;
+}
+.server:hover, .client:hover, .forum:hover, .services:hover {
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.1s ease, background-color 0.3s ease;
+    scale: 1.2;
+    color: var(--pri);
+    background-color: var(--sec);
+}
+
+.shop, .faq, .contact, .about {
+    position: absolute;
+    border-radius: 0.5vmax;
+    padding: 0.5vmax;
+
+    right: 0.8vmax;
+    top: calc(50% - 1.2vmax);
+    height: 1.5vmax;
+    aspect-ratio: 1/1;
+
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 1s ease;
+}
+.shop > img, .faq > img, .contact > img, .about > img {
+    height: 100%;
+}
+.faq {
+    right: 4.0vmax;
+}
+.contact {
+    right: 7.2vmax;
+}
+.about {
+    right: 10.4vmax;
+}
+.shop:hover, .faq:hover, .contact:hover, .about:hover {
+    transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    scale: 1.2;
+    background-color: var(--sec);
+}
+.shop:hover > img, .faq:hover > img, .contact:hover > img, .about:hover > img {
+    filter: brightness(0) saturate(100%) invert(40%) sepia(55%) saturate(2898%) hue-rotate(323deg) brightness(89%) contrast(93%);
+}
+.sec1 {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 30vmax;
+    z-index: 99;
+
+    top: calc(50% - 15vmax);
+
+    align-content: center;
+    place-items: center;
+    display: grid;
+}
+.titledec {
+    background-color: var(--sec);
+    margin-top: 0vmax;
+    border-radius: 1vmax;
+}
+.title1 {
+    font-family: gabarito,sans-serif;
+    text-align: center;
+    color: var(--pri);
+    letter-spacing: 1.4px;
+
+    padding-left: 2vmax;
+    padding-right: 2vmax;
+    font-size: 10vmax;
+    border-radius: 1vmax;
+    margin: 0px;
+
+    transition: background-color 0.3s ease;
+}
+.description1 {
+    text-align: center;
+    font-family: poppins,sans-serif;
+    color: var(--txt);
+
+    padding-left: 2vmax;
+    padding-right: 2vmax;
+    font-size: 2vmax;
+    border-radius: 1vmax;
+
+    margin-top: 0vmax;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.sec2 {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+
+    top: calc(100%);
+}
+.grid2 {
+    position: absolute;
+    background-color: transparent;
+    width: 90vmax;
+    height: 40vmax;
+
+    top: calc(50% - 20vmax);
+    left: calc(50% - 45vmax);
+}
+.server2, .client2, .forums2, .services2 {
+    position: absolute;
+    background-color: var(--bg2);
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    overflow: hidden;
+
+    width: calc(33.3% - 1.5vmax);
+    height: calc(50% - 1.5vmax);
+    border-radius: 1vmax;
+
+    transition: box-shadow 0.3s ease, scale 0.5s ease;
+}
+.server2 {
+    top: 1vmax;
+    left: 1vmax;
+}
+.client2 {
+    top: 1vmax;
+    left: calc(33.3% + 0.5vmax);
+}
+.forums2 {
+    bottom: 1vmax;
+    left: 1vmax;
+}
+.services2 {
+    bottom: 1vmax;
+    left: calc(33.3% + 0.5vmax);
+}
+.grid2title {
+    position: absolute;
+    color: var(--pri);
+    opacity: 1;
+    font-family: gabarito,sans-serif;
+    font-size: 2.5vmax;
+    letter-spacing: 2px;
+
+    left: 2.5vmax;
+}
+.grid2desc {
+    position: absolute;
+    color: var(--txt);
+    opacity: 1;
+    width: calc(100% - 5vmax);
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    letter-spacing: 0.5px;
+
+    left: 2.5vmax;
+    top: 5vmax;
+}
+.store2, .faq2, .support2 {
+    position: absolute;
+    background-color: var(--bg2);
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    overflow: hidden;
+
+    width: calc(33.3% - 1vmax);
+    height: calc(33.3% - 1.5vmax);
+    border-radius: 1vmax;
+
+    transition: box-shadow 0.3s ease, scale 0.5s ease;
+}
+.store2 {
+    top: 1vmax;
+    right: 1vmax;
+}
+.faq2 {
+    top: calc(33.3% + 0.75vmax);
+    right: 1vmax;
+}
+.support2 {
+    top: calc(66.6% + 0.5vmax);
+    right: 1vmax;
+}
+
+.server2:hover, .client2:hover, .forums2:hover, .services2:hover, .store2:hover, .faq2:hover, .support2:hover {
+    box-shadow: 0px 0px 0px 0.1vmax var(--pri);
+    scale: 0.98;
+}
+.server2:hover > .grid2img, .client2:hover > .grid2img, .forums2:hover > .grid2img, .services2:hover > .grid2img, .store2:hover > .grid2img, .faq2:hover > .grid2img, .support2:hover > .grid2img {
+    scale: 5;
+}
+.grid2img {
+    position: absolute;
+    opacity: 0.05;
+    scale: 3.5;
+
+    bottom: 0px;
+    right: 0px;
+
+    transition: scale 0.5s ease;
+}
+
