@@ -203,4 +203,40 @@ $(document).ready(function(){
             $("#jerry").css("transition", "background-color 0.3s ease, transform 1s ease");
         }
     );
+    $(".change1").hover(
+        function(){
+            $("#jerry").css("background-color", "var(--pri)");
+            $("#jerry").css("transform", "scale(0.6)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 0.7s ease");
+        },
+        function(){
+            $("#jerry").css("background-color", "");
+            $("#jerry").css("transform", "scale(1)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 1s ease");
+        }
+    );
+    $(".change2").hover(
+        function(){
+            $("#jerry").css("background-color", "var(--pri)");
+            $("#jerry").css("transform", "scale(0.6)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 0.7s ease");
+        },
+        function(){
+            $("#jerry").css("background-color", "");
+            $("#jerry").css("transform", "scale(1)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 1s ease");
+        }
+    );
+    $(".change3").hover(
+        function(){
+            $("#jerry").css("background-color", "var(--pri)");
+            $("#jerry").css("transform", "scale(0.6)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 0.7s ease");
+        },
+        function(){
+            $("#jerry").css("background-color", "");
+            $("#jerry").css("transform", "scale(1)");
+            $("#jerry").css("transition", "background-color 0.3s ease, transform 1s ease");
+        }
+    );
 });

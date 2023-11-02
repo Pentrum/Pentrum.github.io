@@ -10,7 +10,7 @@
 
 body {
     background-color: var(--bg);
-    height: 300vh;
+    height: 330vh;
     margin: 0rem;
     overflow-x: hidden;
     cursor: none;
@@ -351,9 +351,10 @@ body::-webkit-scrollbar-track {
 
 .sec3 {
     position: absolute;
-    background-color: transparent;
+    background-color: black;
+    scale: 0.8;
     width: 90vmax;
-    height: 20vmax;
+    height: 53vmax;
 
     top: calc(250% - 10vmax);
     left: calc(50% - 45vmax);
@@ -382,31 +383,44 @@ body::-webkit-scrollbar-track {
     left: 1vmax;
     top: -0.5vmax;
 }
-.change1, .change2, .change3 {
+.change1, .change2, .change3, .change4, .change5 {
     position: absolute;
     background-color: var(--bg2);
     box-shadow: 0px 0px 0px 0.1vmax var(--out);
     width: calc(33.3% - 0.6vmax);
-    height: calc(100% - 4.3vmax);
+    aspect-ratio: 15 / 8;
     border-radius: 1vmax;
     overflow: hidden;
 
     transition: scale 0.3s ease, box-shadow 0.3s ease;
 }
 .change1 {
-    bottom: 0px;
+    top: 4.3vmax;
     left: 0px;
 }
 .change2 {
-    bottom: 0px;
+    top: 4.3vmax;
     left: calc(33.3% + 0.3vmax);
 }
 .change3 {
-    bottom: 0px;
+    top: 4.3vmax;
     left: calc(66.6% + 0.6vmax);
 }
+.change4 {
+    top: 20.8vmax;
+    left: calc(66.6% + 0.6vmax);
+}
+.change5 {
+    width: calc(66.6% - 0.3vmax);
+    top: 20.8vmax;
+    left: 0px;
+}
 
-.change1 > img, .change2 > img, .change3 > img {
+.change1 > img,
+.change2 > img,
+.change3 > img,
+.change4 > img,
+.change5 > img {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -415,7 +429,11 @@ body::-webkit-scrollbar-track {
     transition: scale 0.3s ease, opacity 0.3s ease;
 }
 
-.change1 > .changetext, .change2 > .changetext, .change3 > .changetext {
+.change1 > .changetext,
+.change2 > .changetext,
+.change3 > .changetext,
+.change4 > .changetext,
+.change5 > .changetext {
     position: absolute;
     color: var(--txt);
     background-color: transparent;
@@ -432,9 +450,13 @@ body::-webkit-scrollbar-track {
 
     transition: color 0.3s ease, background-color 0.3s ease;
 }
-.change1 > .changedesc, .change2 > .changedesc, .change3 > .changedesc {
+.change1 > .changedesc,
+.change2 > .changedesc,
+.change3 > .changedesc,
+.change4 > .changedesc,
+.change5 > .changedesc {
     position: absolute;
-    background-color: rgba(10,10,10,0.7);
+    background-color: rgba(10,10,10,0.4);
     width: calc(50% - 1vmax);
     color: var(--txt);
     border-radius: 1vmax;
@@ -448,25 +470,43 @@ body::-webkit-scrollbar-track {
     padding-top: 0.5vmax;
     padding-bottom: 0.5vmax;
 
+    backdrop-filter: blur(0.5vmax);
+
     top: 4vmax;
     left: 1vmax;
 
     z-index: 2;
     transition: top 1s ease, opacity 0.5s ease;
 }
-.change1:hover, .change2:hover, .change3:hover {
+.change1:hover,
+.change2:hover,
+.change3:hover,
+.change4:hover,
+.change5:hover {
     scale: 1.02;
     box-shadow: 0px 0px 0px 0.1vmax var(--pri);
 }
-.change1:hover > img, .change2:hover > img, .change3:hover > img {
+.change1:hover > img,
+.change2:hover > img,
+.change3:hover > img,
+.change4:hover > img,
+.change5:hover > img {
     scale: 1.05;
     opacity: 0.7;
 }
-.change1:hover > .changedesc, .change2:hover > .changedesc, .change3:hover > .changedesc {
+.change1:hover > .changedesc,
+.change2:hover > .changedesc,
+.change3:hover > .changedesc,
+.change4:hover > .changedesc,
+.change5:hover > .changedesc {
     top: 3vmax;
     opacity: 1;
 }
-.change1:hover > .changetext, .change2:hover > .changetext, .change3:hover > .changetext {
+.change1:hover > .changetext,
+.change2:hover > .changetext,
+.change3:hover > .changetext,
+.change4:hover > .changetext,
+.change5:hover > .changetext {
     color: var(--pri);
     background-color: var(--sec);
 }
