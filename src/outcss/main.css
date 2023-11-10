@@ -86,7 +86,7 @@ body::-webkit-scrollbar-track {
     background-color: transparent;
 }
 ::selection {
-    background-color: rgba(42, 12, 17,1);
+    background-color: var(--sec);
     color: white;
 }
 
@@ -110,6 +110,7 @@ body::-webkit-scrollbar-track {
     position: absolute;
     height: 100%;
     scale: 0.8;
+    filter: invert(44%) sepia(89%) saturate(1879%) hue-rotate(204deg) brightness(100%) contrast(96%);
 
     transition: scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -180,7 +181,7 @@ body::-webkit-scrollbar-track {
     background-color: var(--sec);
 }
 .shop:hover > img, .faq:hover > img, .contact:hover > img, .about:hover > img {
-    filter: brightness(0) saturate(100%) invert(40%) sepia(55%) saturate(2898%) hue-rotate(323deg) brightness(89%) contrast(93%);
+    filter: invert(44%) sepia(89%) saturate(1879%) hue-rotate(204deg) brightness(100%) contrast(96%);
 }
 .sec1 {
     position: absolute;
@@ -258,7 +259,7 @@ body::-webkit-scrollbar-track {
 }
 .server2, .client2, .forums2, .services2 {
     position: absolute;
-    background-color: var(--bg2);
+    background-color: rgba(10,10,10,0.75);
     box-shadow: 0px 0px 0px 0.1vmax var(--out);
     overflow: hidden;
 
@@ -308,7 +309,7 @@ body::-webkit-scrollbar-track {
 }
 .store2, .faq2, .support2 {
     position: absolute;
-    background-color: var(--bg2);
+    background-color: rgba(10,10,10,0.75);
     box-shadow: 0px 0px 0px 0.1vmax var(--out);
     overflow: hidden;
 
@@ -345,13 +346,14 @@ body::-webkit-scrollbar-track {
 
     bottom: 0px;
     right: 0px;
+    filter: invert(44%) sepia(89%) saturate(1879%) hue-rotate(204deg) brightness(100%) contrast(96%);
 
     transition: scale 0.5s ease;
 }
 
 .sec3 {
     position: absolute;
-    background-color: black;
+    background-color: transparent;
     scale: 0.8;
     width: 90vmax;
     height: 53vmax;
@@ -383,7 +385,7 @@ body::-webkit-scrollbar-track {
     left: 1vmax;
     top: -0.5vmax;
 }
-.change1, .change2, .change3, .change4, .change5 {
+.change1, .change2, .change3, .change4, .change5, .change6 {
     position: absolute;
     background-color: var(--bg2);
     box-shadow: 0px 0px 0px 0.1vmax var(--out);
@@ -415,25 +417,32 @@ body::-webkit-scrollbar-track {
     top: 20.8vmax;
     left: 0px;
 }
+.change6 {
+    top: 37.3vmax;
+    left: calc(66.6% + 0.6vmax);
+    aspect-ratio: 15 / 2;
+}
 
 .change1 > img,
 .change2 > img,
 .change3 > img,
 .change4 > img,
-.change5 > img {
+.change5 > img,
+.change6 > img {
     position: absolute;
     height: 100%;
     width: 100%;
     opacity: 0.3;
 
-    transition: scale 0.3s ease, opacity 0.3s ease;
+    transition: scale 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
 }
 
 .change1 > .changetext,
 .change2 > .changetext,
 .change3 > .changetext,
 .change4 > .changetext,
-.change5 > .changetext {
+.change5 > .changetext,
+.change6 > .changetext {
     position: absolute;
     color: var(--txt);
     background-color: transparent;
@@ -443,8 +452,8 @@ body::-webkit-scrollbar-track {
     border-radius: 1vmax;
     padding-left: 0.5vmax;
     padding-right: 0.5vmax;
-    padding-top: 0.2vmax;
-    padding-bottom: 0.2vmax;
+    padding-top: 0.4vmax;
+    padding-bottom: 0.4vmax;
 
     left: 1vmax;
 
@@ -454,14 +463,15 @@ body::-webkit-scrollbar-track {
 .change2 > .changedesc,
 .change3 > .changedesc,
 .change4 > .changedesc,
-.change5 > .changedesc {
+.change5 > .changedesc,
+.change6 > .changedesc {
     position: absolute;
     background-color: rgba(10,10,10,0.4);
     width: calc(50% - 1vmax);
     color: var(--txt);
     border-radius: 1vmax;
     font-family: poppins,sans-serif;
-    font-size: calc(0.7vmax);
+    font-size: calc(0.75vmax);
     letter-spacing: 0.5px;
     left: 0.5vmax;
     opacity: 0;
@@ -482,15 +492,17 @@ body::-webkit-scrollbar-track {
 .change2:hover,
 .change3:hover,
 .change4:hover,
-.change5:hover {
-    scale: 1.02;
+.change5:hover,
+.change6:hover {
+    scale: 1.0;
     box-shadow: 0px 0px 0px 0.1vmax var(--pri);
 }
 .change1:hover > img,
 .change2:hover > img,
 .change3:hover > img,
 .change4:hover > img,
-.change5:hover > img {
+.change5:hover > img,
+.change6:hover > img {
     scale: 1.05;
     opacity: 0.7;
 }
@@ -499,15 +511,34 @@ body::-webkit-scrollbar-track {
 .change3:hover > .changedesc,
 .change4:hover > .changedesc,
 .change5:hover > .changedesc {
-    top: 3vmax;
+    top: 3.5vmax;
     opacity: 1;
 }
 .change1:hover > .changetext,
 .change2:hover > .changetext,
 .change3:hover > .changetext,
 .change4:hover > .changetext,
-.change5:hover > .changetext {
+.change5:hover > .changetext,
+.change6:hover > .changetext {
     color: var(--pri);
     background-color: var(--sec);
+}
+.changetext2 {
+    position: absolute;
+    color: var(--pri);
+    background-color: transparent;
+    font-family: gabarito,sans-serif;
+    font-size: 2vmax;
+    z-index: 2;
+    border-radius: 1vmax;
+    padding-left: 0.5vmax;
+    padding-right: 0.5vmax;
+    padding-top: 0.4vmax;
+    padding-bottom: 0.4vmax;
+    top: -25%;
+
+    left: 1vmax;
+
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 

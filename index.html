@@ -1,13 +1,16 @@
 <!doctype html>
 <head>
     <meta charset="utf-8">
-    <meta property="og:title" content="Pentrum Studios"/>
-    <meta property="og:description" content="Main page of Pentrum Studios"/>
-    <meta property="og:image" content="/og-image.png"/>
-    <title>Pentrum Studios</title>
+    <meta content="Pentrum" property="og:title" />
+    <meta content="our website allows you to connect with a vibrant community.
+ express yourself with your own profile, cosmetics and much more" property="og:description" />
+    <meta content="og-image.png" property="og:image" />
+    <meta content="#4b77ff" data-react-helmet="true" name="theme-color"/>
+    <title>Pentrum</title>
     <link rel="icon" href="og-image.png" type="image/x.icon">
 </head>
 <link rel="stylesheet" href="src/outcss/fonts.css">
+<link rel="stylesheet" href="src/outcss/ids.css">
 <link rel="stylesheet" href="src/outcss/loading.css">
 <link rel="stylesheet" href="src/outcss/main.css">
 <link rel="stylesheet" href="src/outcss/sections.css">
@@ -40,8 +43,10 @@
 
     <div class="loadingerror">
         <div class="loadingerror2"></div>
-        <h1 class="loadingerrortxt"><span class="errorhigh">Error 502 </span><br>
-            Incorrect server response</h1>
+        <h1 class="loadingerrortxt"><span class="errorhigh">Alert </span><br>
+            We recommend you to get the
+            <br><a href="https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj" style="text-decoration: none;">
+                <span class="erroractive" id="highlight">smooth scrolling</span></a> extention</h1>
     </div>
 </div>
 
@@ -173,21 +178,26 @@
             But our future is bright, let's go to the light</h1>
         <img src="src/pngs/main/117973.jpg">
     </div>
+    <div class="change6">
+        <h1 class="changetext2">Click to see all changes</h1>
+    </div>
 </div>
 
 <div id="blurjerry"></div>
 <div id="fatjerry"></div>
 <div id="jerry"></div>
+
+<h1 id="errorevent">Will take you to <span id="highlight">chrome.google.com</span></h1>
 </body>
 
 <style>
     :root {
-        --bg: rgba(7,7,7,1);
-        --bg2: rgba(10,10,10,1);
-        --out: rgba(30,30,30,1);
-        --txt: rgba(178,178,178,1);
-        --pri: rgba(220, 67, 95,1);
-        --sec: rgba(42, 12, 17,1);
-        --acc: rgba(255, 160, 97,1);
+        --bg: rgba(9, 9, 11,1);
+        --bg2: rgba(15,15,17,1);
+        --out: rgba(40,40,42,1);
+        --txt: rgba(220, 220, 220,1);
+        --pri: rgba(75, 119, 255,1);
+        --sec: rgba(8, 14, 38,1);
+        --acc: rgba(69, 222, 152,1);
     }
 </style>

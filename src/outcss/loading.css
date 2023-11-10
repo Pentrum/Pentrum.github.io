@@ -13,7 +13,7 @@
         color: var(--pri);
     }
     50% {
-        color: var(--sec);
+        color: var(--acc);
     }
     100% {
         color: var(--pri);
@@ -24,7 +24,7 @@
         background-color: var(--pri);
     }
     50% {
-        background-color: var(--sec);
+        background-color: var(--acc);
     }
     100% {
         background-color: var(--pri);
@@ -194,7 +194,7 @@
     color: var(--txt);
     font-family: poppins,sans-serif;
 
-    margin-top: 1.6vmax;
+    margin-top: 1vmax;
     margin-left: 1vmax;
 }
 .errorhigh {
