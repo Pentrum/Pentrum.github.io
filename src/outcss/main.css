@@ -7,12 +7,28 @@
         background-position: -200% center;
     }
 }
-
+@keyframes status {
+    from {
+        scale: 0.5;
+        opacity: 0.65;
+    }
+    85% {
+        scale: 1.1;
+        opacity: 0;
+    }
+    to {
+        scale: 1.1;
+        opacity: 0;
+    }
+}
 body {
     background-color: var(--bg);
-    height: 330vh;
+    height: 350vh;
     margin: 0rem;
     overflow-x: hidden;
+    cursor: none;
+}
+* {
     cursor: none;
 }
 @keyframes rotate {
@@ -43,7 +59,7 @@ z-index: 10000;
     transition: background-color 0.3s ease, transform 1s ease;
 }
 #fatjerry {
-    background-color: var(--pri);
+    background: linear-gradient(to right, var(--pri), var(--acc));
     height: 25vmax;
     aspect-ratio: 1;
     position: fixed;
@@ -51,8 +67,9 @@ z-index: 10000;
     top: 50%;
     translate: -50% -50%;
     border-radius: 50%;
-    animation: rotate 20s infinite;
-    opacity: 0.3;
+    animation: rotate 15s infinite linear;
+    opacity: 0.4;
+    transform: scaleX(1.2);
 
     pointer-events: none;
     z-index: 1;
@@ -87,12 +104,12 @@ body::-webkit-scrollbar-track {
 }
 ::selection {
     background-color: var(--sec);
-    color: white;
+    color: var(--acc);
 }
 
 .nav {
     position: fixed;
-    background-color: rgba(10,10,10,0.5);
+    background-color: rgba(10,10,10,0.1);
     height: 4.5vmax;
     width: 98.6vmax;
     z-index: 100;
@@ -333,7 +350,7 @@ body::-webkit-scrollbar-track {
 }
 
 .server2:hover, .client2:hover, .forums2:hover, .services2:hover, .store2:hover, .faq2:hover, .support2:hover {
-    box-shadow: 0px 0px 0px 0.1vmax var(--pri);
+    box-shadow: 0px 0px 0px 0.25vmax var(--pri);
     scale: 0.98;
 }
 .server2:hover > .grid2img, .client2:hover > .grid2img, .forums2:hover > .grid2img, .services2:hover > .grid2img, .store2:hover > .grid2img, .faq2:hover > .grid2img, .support2:hover > .grid2img {
@@ -351,15 +368,26 @@ body::-webkit-scrollbar-track {
     transition: scale 0.5s ease;
 }
 
+.screen3 {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+
+    top: calc(200%);
+}
 .sec3 {
     position: absolute;
     background-color: transparent;
     scale: 0.8;
-    width: 90vmax;
+    width: 110vmax;
     height: 53vmax;
 
-    top: calc(250% - 10vmax);
-    left: calc(50% - 45vmax);
+    top: 50%;
+    left: calc(50%);
+    translate: -50% -50%;
 
     z-index: 99;
 }
@@ -390,7 +418,7 @@ body::-webkit-scrollbar-track {
     background-color: var(--bg2);
     box-shadow: 0px 0px 0px 0.1vmax var(--out);
     width: calc(33.3% - 0.6vmax);
-    aspect-ratio: 15 / 8;
+    aspect-ratio: 15 / 6.5;
     border-radius: 1vmax;
     overflow: hidden;
 
@@ -420,7 +448,7 @@ body::-webkit-scrollbar-track {
 .change6 {
     top: 37.3vmax;
     left: calc(66.6% + 0.6vmax);
-    aspect-ratio: 15 / 2;
+    aspect-ratio: 15 / 1.6;
 }
 
 .change1 > img,
@@ -430,8 +458,10 @@ body::-webkit-scrollbar-track {
 .change5 > img,
 .change6 > img {
     position: absolute;
-    height: 100%;
     width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     opacity: 0.3;
 
     transition: scale 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
@@ -488,6 +518,33 @@ body::-webkit-scrollbar-track {
     z-index: 2;
     transition: top 1s ease, opacity 0.5s ease;
 }
+.change1 > .changedate,
+.change2 > .changedate,
+.change3 > .changedate,
+.change4 > .changedate,
+.change5 > .changedate,
+.change6 > .changedate {
+    position: absolute;
+    background-color: rgba(10,10,10,0.4);
+    color: var(--txt);
+    border-radius: 1vmax;
+    font-family: poppins,sans-serif;
+    font-size: calc(0.89vmax);
+    letter-spacing: 0.5px;
+    opacity: 0.3;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+    padding-top: 0.5vmax;
+    padding-bottom: 0.5vmax;
+
+    backdrop-filter: blur(0.5vmax);
+
+    bottom: 0.2vmax;
+    left: 1vmax;
+
+    z-index: 2;
+    transition: top 1s ease, opacity 0.5s ease;
+}
 .change1:hover,
 .change2:hover,
 .change3:hover,
@@ -512,6 +569,13 @@ body::-webkit-scrollbar-track {
 .change4:hover > .changedesc,
 .change5:hover > .changedesc {
     top: 3.5vmax;
+    opacity: 1;
+}
+.change1:hover > .changedate,
+.change2:hover > .changedate,
+.change3:hover > .changedate,
+.change4:hover > .changedate,
+.change5:hover > .changedate {
     opacity: 1;
 }
 .change1:hover > .changetext,
@@ -542,3 +606,336 @@ body::-webkit-scrollbar-track {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+
+.screen4 {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+
+    top: calc(300%);
+}
+.sec4 {
+    position: absolute;
+    background-color: transparent;
+    scale: 0.8;
+    width: 110vmax;
+    height: 35vmax;
+
+    top: calc(50%);
+    left: calc(50%);
+    translate: -50% -50%;
+
+    z-index: 99;
+}
+.titledec4 {
+    position: absolute;
+    background-color: var(--bg2);
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    width: 30%;
+    height: 3.5vmax;
+
+    border-radius: 1vmax;
+
+    top: 0px;
+}
+.title4 {
+    position: absolute;
+    color: var(--pri);
+    opacity: 1;
+    font-family: gabarito,sans-serif;
+    font-size: 1.75vmax;
+    letter-spacing: 0.8px;
+
+    left: 1vmax;
+    top: -0.5vmax;
+}
+.server4, .client4, .forums4, .services4 {
+    position: absolute;
+    background: var(--bg2);
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    width: calc(25% - 1vmax);
+    height: calc(100% - 4.5vmax);
+    bottom: 0vmax;
+    border-radius: 1vmax;
+}
+.client4 {
+    left: calc(25% + 0.33vmax);
+}
+.forums4 {
+    left: calc(50% + 0.66vmax);
+}
+.services4 {
+    left: calc(75% + 1vmax);
+}
+.statustitle {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 3vmax;
+    left: 2vmax;
+    top: -0.75vmax;
+    letter-spacing: -0.4px;
+}
+.statuslist {
+    position: absolute;
+    background: var(--bg);
+    width: calc(100% - 2vmax);
+    height: calc(100% - 7vmax);
+    bottom: 1vmax;
+    left: 1vmax;
+    border-radius: 1vmax;
+}
+
+.serverlist1, .serverlist2, .serverlist3, .clientlist1, .clientlist2, .clientlist3, .clientlist4, .forumslist1, .serviceslist1 {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 1vmax;
+    width: calc(100% - 2vmax);
+    height: calc(15% - 0.15vmax);
+}
+.serverlist1, .clientlist1, .forumslist1, .serviceslist1 {
+    top: 1vmax;
+    left: 1vmax;
+}
+.serverlist2, .clientlist2 {
+    top: 6vmax;
+    left: 1vmax;
+}
+.serverlist3, .clientlist3 {
+    top: 10vmax;
+    left: 1vmax;
+}
+.serverlist4, .clientlist4 {
+    top: 14vmax;
+    left: 1vmax;
+}
+.serverdec {
+    position: absolute;
+    background: #ff3939;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.serverdecan {
+    position: absolute;
+    background: #ff3939;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+
+    animation: status 2s infinite linear;
+}
+.servertext {
+    position: absolute;
+    color: #ff3939;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.serverdec2 {
+    position: absolute;
+    background: #ff3939;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.servertext2 {
+    position: absolute;
+    color: #ff3939;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.serverdec3 {
+    position: absolute;
+    background: #ff3939;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.servertext3 {
+    position: absolute;
+    color: #ff3939;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.seplist {
+    position: absolute;
+    background: var(--out);
+    height: 0.07vmax;
+    width: calc(100% - 1vmax);
+    top: 5vmax;
+    left: 0.5vmax;
+}
+
+.clientdec {
+    position: absolute;
+    background: #77f868;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.clientdecan {
+    position: absolute;
+    background: #77f868;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+
+    animation: status 2s infinite linear;
+}
+.clienttext {
+    position: absolute;
+    color: #77f868;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.clientdec2 {
+    position: absolute;
+    background: #ff3939;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.clienttext2 {
+    position: absolute;
+    color: #ff3939;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.clientdec3 {
+    position: absolute;
+    background: #77f868;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.clienttext3 {
+    position: absolute;
+    color: #77f868;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+
+}
+.clientdec4 {
+    position: absolute;
+    background: #77f868;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.clienttext4 {
+    position: absolute;
+    color: #77f868;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+
+
+.forumsdec {
+    position: absolute;
+    background: #ffa446;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.forumstext {
+    position: absolute;
+    color: #ffa446;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.forumsdecan {
+    position: absolute;
+    background: #ffa446;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+
+    animation: status 2s infinite linear;
+}
+.servicesdec {
+    position: absolute;
+    background: #ffa446;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+    scale: 0.5;
+}
+.servicestext {
+    position: absolute;
+    color: #ffa446;
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    left: 3vmax;
+    top: 0.25vmax;
+    letter-spacing: 1.4px;
+}
+.servicesdecan {
+    position: absolute;
+    background: #ffa446;
+    border-radius: 1vmax;
+    height: 1.5vmax;
+    top: 0.85vmax;
+    left: 0.75vmax;
+    aspect-ratio: 1 / 1;
+
+    animation: status 2s infinite linear;
+}

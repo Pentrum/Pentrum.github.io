@@ -275,8 +275,7 @@ $(document).ready(function(){
             $("#jerry").css("transition", "background-color 0.3s ease, transform 1s ease");
         }
     );
-    $(".erroractive").hover(
-        function(){
+    $(".erroractive").hover(function(){
             $("#errorevent").css("opacity", "1");
             $("#errorevent").css("transition", "opacity 0.25s ease");
         },
@@ -285,4 +284,12 @@ $(document).ready(function(){
             $("#errorevent").css("transition", "opacity 0.7s ease");
         }
     );
+    $("body").mousedown(function(){
+            $("#jerry").css("transform", "scale(0.5)");
+            $("#jerry").css("transition", "transform 0.25s ease");
+        });
+    $("body").mouseup(function(){
+        $("#jerry").css("transform", "scale(1)");
+        $("#jerry").css("transition", "transform 0.25s ease");
+    });
 });
