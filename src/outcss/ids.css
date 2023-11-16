@@ -32,3 +32,25 @@
 
     transition: background-color 0.3s ease, opacity 1s ease;
 }
+
+#red {
+    color: #ff3939;
+}
+#orange {
+    color: #ffa446;
+}
+#yellow {
+    color: #f8ec68;
+}
+#green {
+    color: #77f868;
+}
+#lblue {
+    color: #68c6f8;
+}
+#dblue {
+    color: #4960ff;
+}
+#purple {
+    color: #7949fd;
+}

@@ -21,9 +21,12 @@
         opacity: 0;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: var(--bg);
-    height: 350vh;
+    height: 500vh;
     margin: 0rem;
     overflow-x: hidden;
     cursor: none;
@@ -692,7 +695,7 @@ body::-webkit-scrollbar-track {
 .serverlist1, .serverlist2, .serverlist3, .clientlist1, .clientlist2, .clientlist3, .clientlist4, .forumslist1, .serviceslist1 {
     position: absolute;
     background: var(--bg1);
-    border-radius: 1vmax;
+    border-radius: 50vmax;
     width: calc(100% - 2vmax);
     height: calc(15% - 0.15vmax);
 }
@@ -938,4 +941,256 @@ body::-webkit-scrollbar-track {
     aspect-ratio: 1 / 1;
 
     animation: status 2s infinite linear;
+}
+
+
+
+.screen5 {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+
+    top: calc(400%);
+}
+.sec5 {
+    position: absolute;
+    background-color: transparent;
+    width: 90vmax;
+    height: 30vmax;
+    z-index: 99;
+    left: calc(50%);
+
+    top: calc(50%);
+    translate: -50% -50%;
+}
+.formbox {
+    position: absolute;
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    background: var(--bg2);
+    border-radius: 1vmax;
+    height: 100%;
+    width: calc(33.3% - 1.33vmax);
+}
+.formtitle, .faqtitle {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1.5vmax;
+    left: 1vmax;
+    top: 0vmax;
+    letter-spacing: -0.4px;
+}
+
+
+.formusername, .formpassword, .formproblem {
+    position: absolute;
+    background: var(--bg);
+    box-shadow: 0vmax 0px 0px -1px var(--pri);
+    border-radius: 0.5vmax;
+    outline: 0;
+    height: 2vmax;
+    border: 0px solid;
+
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    padding-left: 1vmax;
+    color: var(--txt);
+
+    transition: box-shadow 0.5s ease;
+}
+.formusername {
+    top: 3.5vmax;
+    left: 1vmax;
+    width: calc(50% - 2.5vmax);
+}
+.formpassword {
+    top: 3.5vmax;
+    right: 1vmax;
+    width: calc(50% - 2.5vmax);
+}
+.formproblem {
+    top: 6.5vmax;
+    left: 1vmax;
+    width: calc(100% - 4vmax);
+    height: calc(100% - 10vmax);
+
+    padding-right: 1vmax;
+    padding-top: 0.5vmax;
+    resize: none;
+}
+.formusername:focus, .formpassword:focus, .formproblem:focus {
+    outline: 0;
+    box-shadow: -0.2vmax 0px 0px -1px var(--pri);
+}
+.formbutton {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    color: var(--pri);
+    height: 2vmax;
+    border: 0px solid;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    padding-left: 0.5vmax;
+    padding-right: 0.5vmax;
+
+    left: 1vmax;
+    bottom: 0.5001vmax;
+
+    transition: box-shadow 0.3s ease, scale 0.3s ease, margin-bottom 0.3s ease;
+}
+.formbutton:hover {
+    box-shadow: 0px 0.2vmax 0vmax -1px var(--pri);
+    margin-bottom: 0.2vmax;
+}
+.formdesc {
+    position: absolute;
+    text-align: right;
+    color: var(--txt);
+    opacity: 0.25;
+    font-family: poppins,sans-serif;
+    font-size: 0.6vmax;
+    right: 1vmax;
+    top: 0vmax;
+    letter-spacing: -0.4px;
+}
+.faqbox {
+    position: absolute;
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    background: var(--bg2);
+    border-radius: 1vmax;
+    height: 100%;
+    width: calc(66.6% - 0.5vmax);
+    right: 0px;
+}
+.faqbox1, .faqbox2, .faqbox3, .faqbox4, .faqbox5, .faqbox6 {
+    position: absolute;
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    background: var(--bg);
+    border-radius: 1vmax;
+    opacity: 0;
+    height: 8vmax;
+    width: calc(50% - 1.25vmax);
+}
+.faqbox1 {
+    opacity: 1;
+    top: 4vmax;
+    left: 1vmax;
+}
+.faqbox2 {
+    opacity: 1;
+    top: 4vmax;
+    right: 1vmax;
+}
+.faqbox3 {
+    opacity: 1;
+    top: 12.5vmax;
+    left: 1vmax;
+}
+.faqbox4 {
+    opacity: 1;
+    top: 12.5vmax;
+    right: 1vmax;
+}
+.faqbox5 {
+    opacity: 1;
+    top: 21vmax;
+    left: 1vmax;
+}
+.faqbox6 {
+    opacity: 1;
+    top: 21vmax;
+    right: 1vmax;
+}
+.faqtitle1, .faqtitle2, .faqtitle3, .faqtitle4, .faqtitle5, .faqtitle6 {
+    position: absolute;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1.5vmax;
+    border-radius: 1vmax;
+    opacity: 0.5;
+
+    left: 2vmax;
+    top: 0.5vmax;
+}
+.faqdetail {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 1vmax;
+    height: 2vmax;
+    width: calc(100% - 2vmax);
+
+    bottom: 1vmax;
+    left: 1vmax;
+}
+.faqdetaildesc {
+    position: absolute;
+    color: var(--out);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    left: 1vmax;
+}
+.faqdetailduration {
+    position: absolute;
+    color: var(--txt);
+    opacity: 0.35;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    right: 1vmax;
+}
+.faqexit {
+    position: absolute;
+    background: var(--bg);
+    box-shadow: 0px 0px 0px 0.1vmax var(--out);
+    border-radius: 1vmax;
+    height: 2.5vmax;
+    aspect-ratio: 1 / 1;
+    top: 0.75vmax;
+    right: 1vmax;
+
+    opacity: 0;
+
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+
+}
+.squirm, .squirm2 {
+    position: absolute;
+    background: var(--txt);
+    border-radius: 1vmax;
+    height: 50%;
+    width: 0.2vmax;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+
+    transition: height 0.7s ease;
+}
+.squirm {
+    rotate: 45deg;
+}
+.squirm2 {
+    rotate: -45deg;
+}
+.faqexit:hover {
+    background: #ff3939;
+    box-shadow: 0px 0px 0px 0.1vmax #a92323;
+}
+.faqexit:hover .squirm, .faqexit:hover .squirm2 {
+    height: 70%;
+}
+.faqdesc1, .faqdesc2, .faqdesc3, .faqdesc4, .faqdesc5, .faqdesc6 {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    width: 75%;
+    font-size: 0.75vmax;
+    left: 2vmax;
+    top: 4vmax;
+    pointer-events: none;
+
+    opacity: 0;
 }
