@@ -1,415 +1,1510 @@
 body {
     background: rgba(0,0,0,1);
-}
-
-.main {
-    position: absolute;
-    background-color: rgba(0,0,0,1);
-    width: calc(100% - 20px);
     overflow: hidden;
-    height: calc(100% - 20px);
-    left: 10px;
-    top: 10px;
-    scale: 0.99;
 }
-.main > img {
-    width: 100%;
-    z-index: 1;
-}
-
-.titlebox {
+body > img {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid rgba();
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    width: 300px;
-    height: 70px;
-    top: 10px;
-    left: 10px;
-
-    z-index: 2;
-}
-.titledec {
-    position: absolute;
-    background-color: rgba(255,255,255,1);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
     height: 100%;
-    width: 7px;
+
+    transform: scaleY(1);
+}
+@keyframes gradient {
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+@keyframes pulse {
+    0% {
+        background: var(--pri);
+    }
+    50% {
+        background: var(--acc)
+    }
+    100% {
+        background: var(--pri);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        color: var(--pri);
+    }
+    50% {
+        color: var(--acc)
+    }
+    100% {
+        color: var(--pri);
+    }
+}
+
+@keyframes titlepulse {
+    0% {
+        background: var(--pri2);
+        color: var(--pri);
+    }
+    50% {
+        background: var(--acc2);
+        color: var(--acc);
+    }
+    100% {
+        background: var(--pri2);
+        color: var(--pri);
+    }
+}
+
+.dec1 {
+    position: absolute;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    left: 0px;
+
+    animation: pulse 5s ease-in-out infinite;
+}
+.dec2 {
+    position: absolute;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    right: 0px;
+
+    animation: pulse 5s ease-in-out infinite;
 }
 .title {
-    position: absolute;
-    color: white;
-    font-family: mint,sans-serif;
-    letter-spacing: 1.2px;
-    font-size: 44px;
-    top: -10px;
-    left: 20px;
-}
-.tabgui {
-    position: absolute;
-    background-color: rgba(0,0,0,0.2);
     overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    width: 300px;
-    height: 225px;
-    top: 90px;
-    left: 10px;
+    top: 1vmax;
+    left: 1vmax;
+    height: 2vmax;
+    width: 6.5vmax;
+    border-radius: 0.5vmax;
+}
+.titletxt {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1.2vmax;
+    width: 100%;
 
-    z-index: 2;
-}
-.tabguitext {
-    position: absolute;
-    color: white;
-    font-family: mint,sans-serif;
-    letter-spacing: 1.2px;
-    font-size: 34px;
-    top: -10px;
-    left: 20px;
-}
-.tabguicombat {
-    margin-left: 25px;
-}
-.tabguimovement {
-    color: rgba(200,200,200,0.8);
-}
-.tabguirender {
-    color: rgba(200,200,200,0.8);
-}
-.tabguiplayer {
-    color: rgba(200,200,200,0.8);
-}
-.tabguimisc {
-    color: rgba(200,200,200,0.8);
-}
-.tabguipersonalise {
-    color: rgba(200,200,200,0.8);
-}
-.tabguisel {
-    position: absolute;
-    background-color: rgba(255,255,255,1);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
-    border-radius: 25px;
-    height: 50px;
-    width: 7px;
+    left: 1vmax;
+    bottom: -0.55vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
 }
 
-
-.hotbar {
+.scoreboard {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    width: 750px;
-    height: 30px;
-    bottom: 90px;
-    left: 10px;
-
-    z-index: 2;
+    overflow: hidden;
+    background: transparent;
+    top: 4vmax;
+    left: 1vmax;
+    height: 7vmax;
+    width: 15vmax;
 }
-.hotbarhealth {
+.scoreboardtitle {
     position: absolute;
-    background-color: rgba(50,0,0,1);
-    width: calc(100% - 10px);
-    border-radius: 8px;
-    height: 10px;
-    left: 5px;
-    bottom: 5px;
+    overflow: hidden;
+    width: 100%;
+    height: 1.8vmax;
+    border-radius: 0.5vmax 0.5vmax 0.0vmax 0.0vmax;
 }
-.hotbarhealthfull {
+.scoreboardtitletitle {
     position: absolute;
-    background-color: rgba(150,0,0,1);
-    width: 90%;
-    border-radius: 8px;
-    height: 100%;
-    left: 0px;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    bottom: -0.4vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.scoreboardinfo {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 5vmax;
+    border-radius: 0.0vmax 0.0vmax 0.5vmax 0.5vmax;
+
     bottom: 0px;
 }
-.hotbararmor {
+.scoreboardip {
     position: absolute;
-    background-color: rgba(20,20,20,1);
-    width: calc(100% - 10px);
-    border-radius: 8px;
-    height: 5px;
-    left: 5px;
-    bottom: 18px;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
 }
-.hotbararmorfull {
+.scoreboardkd {
     position: absolute;
-    background-color: rgba(150,150,150,1);
-    width: 92%;
-    border-radius: 8px;
+    color: var(--txt);
+    opacity: 0.5;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 1vmax;
+}
+.scoreboardtime {
+    position: absolute;
+    color: var(--txt);
+    opacity: 0.5;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 2vmax;
+}
+.scoreboardconfig {
+    position: absolute;
+    color: var(--txt);
+    opacity: 0.5;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 3vmax;
+}
+.status {
+    position: absolute;
+    overflow: hidden;
+    width: 7vmax;
+    height: 1vmax;
+    border-radius: 0.25vmax 0.25vmax 0.25vmax 0.25vmax;
+
+    bottom: 0.2vmax;
+}
+.statustxt {
+    position: absolute;
+    color: var(--pri);
+    opacity: 1;
+    font-family: poppins,sans-serif;
+    font-size: 0.5vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0.2vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+
+.arraylist {
+    position: absolute;
+    overflow: hidden;
+    width: 15vmax;
+    height: 6vmax;
+    border-radius: 0.25vmax 0.25vmax 0.25vmax 0.25vmax;
+
+    top: 1vmax;
+    right: 1vmax;
+}
+.arraytext {
+    position: absolute;
+    color: var(--pri);
+    opacity: 1;
+    font-family: poppins,sans-serif;
+    font-size: 0.62vmax;
+    width: 100%;
+
+    left: 0.2vmax;
+    top: -0.2vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+
+.combat {
+    top: 0.6vmax;
+}
+.movement {
+    top: 1.5vmax;
+}
+.render {
+    top: 2.5vmax;
+}
+.player {
+    top: 3.4vmax;
+}
+.misc {
+    top: 4.35vmax;
+}
+.exploit {
+    top: 5.3vmax;
+}
+.combatfill {
+    position: absolute;
+    background: var(--pri);
+    width: 15%;
     height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 0s;
+}
+.movementfill {
+    position: absolute;
+    background: var(--pri);
+    width: 32%;
+    height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 0.2s;
+}
+.renderfill {
+    position: absolute;
+    background: var(--pri);
+    width: 79%;
+    height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 0.4s;
+}
+.playerfill {
+    position: absolute;
+    background: var(--pri);
+    width: 23%;
+    height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 0.6s;
+}
+.miscfill {
+    position: absolute;
+    background: var(--pri);
+    width: 31%;
+    height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 0.8s;
+}
+.exploitfill {
+    position: absolute;
+    background: var(--pri);
+    width: 40%;
+    height: 100%;
+    right: 0px;
+    border-radius: 5vmax;
+
+    animation: pulse 5s ease-in-out infinite 1s;
+}
+.m {
+    animation: pulse2 5s ease-in-out infinite 0.2s;
+}
+.r {
+    animation: pulse2 5s ease-in-out infinite 0.4s;
+}
+.p {
+    animation: pulse2 5s ease-in-out infinite 0.6s;
+}
+.mi {
+    animation: pulse2 5s ease-in-out infinite 0.8s;
+}
+.e {
+    animation: pulse2 5s ease-in-out infinite 1s;
+}
+
+
+
+.clickhide {
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(0.5vmax);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+
+    top: 0px;
     left: 0px;
+
+    transition: opacity 0.5s ease;
+}
+.gradient {
+    position: absolute;
+    background: linear-gradient(270deg, #4389ff, #bb43ff, #4389ff);
+    background-size: 600% 600%;
+    animation: gradient 3s ease infinite;
+    height: 0.5vmax;
+    width: 100%;
+
     bottom: 0px;
+    left: 0px;
 }
 
-.items {
+.clickgui {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    aspect-ratio: 10/1;
-    height: 75px;
-    bottom: 10px;
-    left: 10px;
+    background: var(--bg1);
+    box-shadow: 0px 0px 1vmax 0.2vmax var(--bg);
+    border-radius: 0.5vmax;
+    height: 30vmax;
+    width: 60vmax;
+    opacity: 0;
+    scale: 0.5;
 
-    z-index: 3;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
 }
-.itemsel {
+.clicktitle {
     position: absolute;
-    background-color: rgba(0,0,0,0.3);
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.6);
+    text-align: center;
+    background: black;
+    border-radius: 0.5vmax;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+
+    font-family: gabarito,sans-serif;
+    font-size: 2vmax;
+    left: 50%;
+    top: 50%;
+    translate: -50% -225%;
+    scale: 2.5;
+
+    animation: titlepulse 5s ease-in-out infinite;
+}
+.tutorial {
+    position: absolute;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 0.5vmax;
+}
+.tutorialtxt {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -0%;
+}
+
+.tutorialno, .tutorialyes, .ontutorialbutton {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    padding-top: 0.5vmax;
+    padding-bottom: 0.5vmax;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+
+    color: var(--out);
+    font-family: poppins,sans-serif;
+    font-size: 1vmax;
+
+    bottom: 20%;
+
+    transition: color 0.3s ease, background 0.3s ease, scale 0.5s ease;
+}
+.tutorialno {
+    right: 51%;
+}
+.tutorialyes {
+    left: 51%;
+}
+.tutorialno:hover, .tutorialyes:hover, .ontutorialbutton:hover {
+    color: var(--txt);
+    background: var(--bg2);
+    scale: 1.1;
+    cursor: pointer;
+}
+
+
+
+
+.ontutorial {
+    position: absolute;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 0.5vmax;
+    opacity: 0;
+
+    pointer-events: none;
+}
+.ontutorialimg {
+    position: absolute;
+    width: 12vmax;
     aspect-ratio: 1/1;
-    height: 75px;
+    opacity: 0.3;
+
+    transform: scaleX(-1);
+
+    bottom: 0px;
+}
+.ontutorialtxt {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 1.3vmax;
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.azerai {
+    animation: pulse2 5s ease-in-out infinite;
+}
+.ontutorialbutton {
+    left: 50%;
+    translate: -50% -0%;
+    scale: 1;
+}
+
+.clickmain {
+    position: absolute;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 0.5vmax;
+    opacity: 0;
+
+    pointer-events: none;
+}
+.clickmainsep1{
+    position: absolute;
+    background: var(--bg2);
+    height: calc(100% - 6vmax);
+    width: 0.1vmax;
+    top: 1vmax;
+    left: 11.5vmax;
+}
+.clickmainsep2{
+    position: absolute;
+    background: var(--bg2);
+    width: calc(100% - 2vmax);
+    height: 0.1vmax;
+    bottom: 4vmax;
+    left: 1vmax;
+}
+.clickmainsep3{
+    position: absolute;
+    background: var(--bg2);
+    width: calc(9.5vmax);
+    height: 0.1vmax;
+    top: 4.25vmax;
+    left: 1vmax;
+}
+.profile{
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: calc(11vmax);
+    height: 3vmax;
+    bottom: 0.5vmax;
+    right: 1vmax;
+
+    overflow: hidden;
+}
+.profilepfp, .profilepfpund {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 0.5vmax;
+    opacity: 1;
+    z-index: 1;
+}
+.profilename {
+    position: absolute;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    top: -0.2vmax;
+    left: 3.5vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.profilepfpund {
+    pointer-events: none;
+    z-index: 0;
+}
+.profilerole {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.6vmax;
+    bottom: -0vmax;
+    left: 3.5vmax;
+}
+.spotify {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax 0.2vmax 0.2vmax 0.5vmax;
+    width: calc(15vmax);
+    height: 3vmax;
+    bottom: 0.5vmax;
+    left: 1vmax;
+
+    overflow: hidden;
+}
+.visualizer {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+
+    top: 0px;
+    left: 0px;
+}
+.vis1, .vis2, .vis3, .vis4, .vis5, .vis6, .vis7, .vis8, .vis9, .vis10 {
+    position: absolute;
+    height: 100%;
+    background: var(--pri);
+    width: calc(10% - 0.1vmax);
+    padding-left: -0.1vmax;
+    padding-right: -0.1vmax;
+    opacity: 0.2;
+    bottom: 0px;
+    filter: blur(0.2vmax);
+
+    animation: pulse 5s ease-in-out infinite;
+    animation: vis1 1.2s ease-in-out infinite;
+}
+.vis2 {
+    left: 10%;
+    animation: pulse 5s ease-in-out infinite 0.2s;
+    animation: vis2 0.7s ease-in-out infinite 0.2s;
+}
+.vis3 {
+    left: 20%;
+    animation: pulse 5s ease-in-out infinite 0.4s;
+    animation: vis3 1s ease-in-out infinite 0.4s;
+}
+.vis4 {
+    left: 30%;
+    animation: pulse 5s ease-in-out infinite 0.6s;
+    animation: vis4 1.4s ease-in-out infinite 0.6s;
+}
+.vis5 {
+    left: 40%;
+    animation: pulse 5s ease-in-out infinite 0.8s;
+    animation: vis5 1.1s ease-in-out infinite 0.8s;
+}
+.vis6 {
+    left: 50%;
+    animation: pulse 5s ease-in-out infinite 1s;
+    animation: vis6 0.7s ease-in-out infinite 1s;
+}
+.vis7 {
+    left: 60%;
+    animation: pulse 5s ease-in-out infinite 1.2s;
+    animation: vis7 0.9s ease-in-out infinite 1.2s;
+}
+.vis8 {
     left: 70%;
+    animation: pulse 5s ease-in-out infinite 1.4s;
+    animation: vis8 1.2s ease-in-out infinite 1.4s;
+}
+.vis9 {
+    left: 80%;
+    animation: pulse 5s ease-in-out infinite 1.6s;
+    animation: vis9 1.1s ease-in-out infinite 1.6s;
+}
+.vis10 {
+    left: 90%;
+    animation: pulse 5s ease-in-out infinite 1.8s;
+    animation: vis10 0.9s ease-in-out infinite 1.8s;
+}
+.spotifyname {
+    position: absolute;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    left: 1vmax;
+    top: -0.2vmax;
 
-    z-index: 3;
+    z-index: 1;
+}
+.spotifyauthor {
+    position: absolute;
+    color: var(--txt);
+    opacity: 0.8;
+    font-family: poppins,sans-serif;
+    font-size: 0.6vmax;
+    bottom: 0.2vmax;
+    left: 1vmax;
+}
+.spotifyline {
+    position: absolute;
+    background: black;
+    height: 0.2vmax;
+    width: 10%;
+    z-index: 1;
+
+    bottom: 0px;
+    left: 0px;
+
+    animation: spotifyline 60s linear infinite, pulse 5s ease-in-out infinite;
 }
 
-.notify {
+.spotifycontrol {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
+    background: var(--bg);
+    border-radius: 0.2vmax 0.5vmax 0.5vmax 0.2vmax;
+    width: calc(4vmax);
+    height: 3vmax;
+    bottom: 0.5vmax;
+    left: 16.5vmax;
+
     overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    aspect-ratio: 4/1;
-    height: 100px;
-    top: 10px;
-    right: 10px;
+}
+.unskip, .skip, .play, .shuffle, .repeat {
+    position: absolute;
+    height: 1vmax;
+    aspect-ratio: 1/1;
+    translate: -50% -50%;
+    scale: 0.7;
 
-    z-index: 3;
+    filter: var(--icon);
 }
-.notifytext {
-    position: absolute;
-    color: white;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1.2px;
-    font-size: 34px;
-    top: -5px;
-    left: 30px;
+.unskip {
+    left: 25%;
+    top: 25%;
 }
-.notifydec {
-    position: absolute;
-    background-color: rgba(255,255,255,1);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
-    height: 7px;
-    width: 100%;
-    bottom: -20px;
+.skip {
+    right: 0%;
+    top: 25%;
+}
+.play {
+    left: 50%;
+    top: 50%;
+}
+.shuffle {
+    left: 25%;
+    top: 75%;
+}
+.repeat {
+    right: 0%;
+    top: 75%;
 }
 
-.info {
+.category {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
+    background: transparent;
+    width: calc(9.5vmax);
+    height: 19.5vmax;
+    top: 5.5vmax;
+    left: 1vmax;
+
     overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    aspect-ratio: 3.2/1;
-    height: 90px;
-    bottom: 10px;
-    right: 10px;
+}
+.catmain {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 100%;
+    height: 2vmax;
+    cursor: pointer;
 
-    z-index: 3;
+    overflow: hidden;
+
+    transition: background 0.2s ease;
 }
-.fps {
+.decmain {
     position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    letter-spacing: 1px;
-    width: 100%;
-    font-size: 30px;
-    bottom: 30px;
-    right: 10px;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    left: 0px;
+
+    animation: pulse 5s ease-in-out infinite;
 }
-.fps1 {
-    color: rgba(200,200,200,0.8);
-}
-.coords {
+.catmaintext {
     position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    bottom: 5px;
-    right: 10px;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    left: 1vmax;
+    top: -0.2vmax;
+
+    z-index: 1;
 }
-.coords1 {
-    color: rgba(200,200,200,0.8);
-}
-.biome {
+.catmodules {
     position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
     width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    bottom: -20px;
-    right: 10px;
+    top: 2.25vmax;
+    height: 2vmax;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: background 0.2s ease;
 }
-.biome1 {
-    color: rgba(200,200,200,0.8);
+.decmodules {
+    position: absolute;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+
+    animation: pulse 5s ease-in-out infinite;
+}
+.catmodulestext {
+    position: absolute;
+    color: var(--out);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    left: 1vmax;
+    top: -0.2vmax;
+
+    z-index: 1;
+}
+.catgpt {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    width: 100%;
+    top: 4.5vmax;
+    height: 2vmax;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: background 0.2s ease;
+}
+.decgpt {
+    position: absolute;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+
+    animation: pulse 5s ease-in-out infinite;
+}
+.catgpttext {
+    position: absolute;
+    color: var(--out);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    left: 1vmax;
+    top: -0.2vmax;
+
+    z-index: 1;
+}
+.catsettings {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    width: 100%;
+    bottom: 0vmax;
+    height: 2vmax;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: background 0.2s ease;
+}
+.decsettings {
+    position: absolute;
+    background: var(--pri);
+    height: 100%;
+    width: 0.2vmax;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+
+    animation: pulse 5s ease-in-out infinite;
+}
+.catsettingstext {
+    position: absolute;
+    color: var(--out);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    left: 1vmax;
+    top: -0.2vmax;
+
+    z-index: 1;
+}
+.mainbox, .modulesbox, .gptbox, .settingsbox {
+    position: absolute;
+    background: transparent;
+    width: 46.5vmax;
+    height: 24vmax;
+    top: 1vmax;
+    right: 1vmax;
+    opacity: 0;
+
+    overflow: hidden;
+}
+.mainbox {
+    opacity: 1;
 }
 .session {
     position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    width: 300px;
-    height: 90px;
-    top: 325px;
-    left: 10px;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 20vmax;
+    height: 24vmax;
+    top: 0px;
+    left: 0px;
+}
+.sessiontext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
 
-    z-index: 3;
-}
-.sessiondec {
-    position: absolute;
-    background-color: rgba(255,255,255,1);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
-    height: 100%;
-    width: 7px;
-}
-.server {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: left;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: -10px;
-    left: 20px;
-}
-.killdead {
-    position: absolute;
-    color: rgba(150,150,150,1);
-    text-align: left;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 24px;
-    top: 23px;
-    left: 20px;
-}
-.playtime {
-    position: absolute;
-    color: rgba(150,150,150,1);
-    text-align: left;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 24px;
-    top: 45px;
-    left: 20px;
-}
-.arraylist {
-    position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    width: 230px;
-    height: 150px;
-    top: 120px;
-    right: 10px;
+    left: 1vmax;
+    top: -0vmax;
 
-    z-index: 3;
+    animation: pulse2 5s ease-in-out infinite;
 }
-.arraydec {
+.sessiondesc {
     position: absolute;
-    background-color: rgba(255,255,255,1);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,1);
-    height: 100%;
-    width: 7px;
+    color: var(--pri);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 2vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.normal {
+    color: var(--txt);
+}
+.sessionactivity {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    width: 19vmax;
+    height: 10vmax;
+    bottom: 0.5vmax;
+    left: 0.5vmax;
+}
+.sessionactivitytext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.start, .end {
+    position: absolute;
+    color: var(--out);
+    font-family: poppins,sans-serif;
+    font-size: 0.7vmax;
+    bottom: 0vmax;
+}
+.start {
+    left: 1vmax;
+}
+.end {
+    right: 1vmax;
+}
+.activityrods {
+    position: absolute;
+    background: transparent;
+    width: 16vmax;
+    height: 6vmax;
+    bottom: 1.5vmax;
+    left: 1.55vmax;
+}
+.arod1, .arod2, .arod3, .arod4, .arod5, .arod6, .arod7, .arod8 {
+    position: absolute;
+    background: white;
+    border-radius: 50vmax;
+    width: 0.2vmax;
+    height: 90%;
+
+    bottom: 0px;
+
+    animation: pulse 5s ease-in-out infinite;
+    translate: -50% -0%;
+}
+.arod2 {
+    left: 14.3%;
+    height: 75%;
+    animation: pulse 5s ease-in-out infinite 0.2s;
+}
+.arod3 {
+    left: 28.6%;
+    height: 70%;
+    animation: pulse 5s ease-in-out infinite 0.4s;
+}
+.arod4 {
+    left: 42.9%;
+    height: 60%;
+    animation: pulse 5s ease-in-out infinite 0.6s;
+}
+.arod5 {
+    left: 56.2%;
+    height: 45%;
+    animation: pulse 5s ease-in-out infinite 0.8s;
+}
+.arod6 {
+    left: 70.5%;
+    height: 56%;
+    animation: pulse 5s ease-in-out infinite 1s;
+}
+.arod7 {
+    left: 84.8%;
+    height: 52%;
+    animation: pulse 5s ease-in-out infinite 1.2s;
+}
+.arod8 {
+    left: 100%;
+    height: 23%;
+    animation: pulse 5s ease-in-out infinite 1.4s;
+}
+
+.performance {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 12vmax;
+    height: 8vmax;
+    top: 0px;
+    left: 20.5vmax;
+}
+.performancetext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.performancedesc {
+    position: absolute;
+    color: var(--pri);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 2vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.task {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 26vmax;
+    height: 4.5vmax;
+    top: 8.5vmax;
+    left: 20.5vmax;
+}
+.tasktext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.tasktext2 {
+    position: absolute;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+    text-align: right;
+
+    right: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.taskdesc {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 2vmax;
+}
+.tasknum {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+    text-align: right;
+
+    right: 1vmax;
+    top: 2vmax;
+}
+.hotkey {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 13.5vmax;
+    height: 8vmax;
+    top: 0px;
+    left: 33vmax;
+}
+.hotkeytext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.hotkeydesc {
+    position: absolute;
+    color: var(--pri);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: 2vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.news {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 26vmax;
+    height: 10.5vmax;
+    top: 13.5vmax;
+    left: 20.5vmax;
+}
+.newstext {
+    position: absolute;
+    color: var(--pri);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+    width: 100%;
+
+    left: 1vmax;
+    top: -0vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.newsdesc {
+    position: absolute;
+    color: var(--pri);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    bottom: 2.25vmax;
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.newsdesc2 {
+    position: absolute;
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    width: 100%;
+
+    left: 1vmax;
+    bottom: 0vmax;
+}
+.newsimg {
+    position: absolute;
+    height: 10vmax;
+    aspect-ratio: 1/1;
+    opacity: 0.5;
+
+    bottom: 0px;
     right: 0px;
 }
-.vel {
+.newsbg {
     position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
+    background: linear-gradient(32deg, var(--pri), var(--acc));
+    border-radius: 0.5vmax;
+    opacity: 0.1;
     width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: -15px;
-    right: 20px;
-}
-.vel2 {
-    color: rgba(200,200,200,1);
-}
-.hud {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: 74px;
-    right: 20px;
-}
-.hud2 {
-    color: rgba(200,200,200,1);
-}
-.arsession {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: 15px;
-    right: 20px;
-}
-.arsession2 {
-    color: rgba(200,200,200,1);
-}
-.arinfo {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: 102px;
-    right: 20px;
-}
-.arinfo2 {
-    color: rgba(200,200,200,1);
-}
-.artabgui {
-    position: absolute;
-    color: rgba(255,255,255,1);
-    text-align: right;
-    font-family: mint,sans-serif;
-    width: 100%;
-    letter-spacing: 1px;
-    font-size: 30px;
-    top: 44px;
-    right: 20px;
-}
-.artabgui2 {
-    color: rgba(200,200,200,1);
+    height: 100%;
 }
 
+.mocats {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    height: 3vmax;
+    width: 100%;
+}
+.mocats2 {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    height: 20.5vmax;
+    width: 100%;
 
+    top: 3.5vmax;
+}
+.mocats2text {
+    position: absolute;
+    font-family: gabarito,sans-serif;
+    font-size: 2vmax;
+    color: var(--out);
+    white-space: nowrap;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -100%;
+}
+.mocombat, .momovement, .morender, .moplayer, .momisc, .moexploit {
+    position: absolute;
+    background: transparent;
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    width: 7vmax;
+    top: 0.25vmax;
+    left: 0.25vmax;
+
+    cursor: pointer;
+}
+.momovement {
+    left: 7.5vmax;
+}
+.morender {
+    left: 14.75vmax;
+}
+.moplayer {
+    left: 22vmax;
+}
+.momisc {
+    left: 29.25vmax;
+}
+.moexploit {
+    left: 36.50vmax;
+}
+.mocombat2, .momovement2, .morender2, .moplayer2, .momisc2, .moexploit2 {
+    position: absolute;
+    text-align: center;
+    color: var(--out);
+    font-family: gabarito,sans-serif;
+    scale: 0.75;
+    border-radius: 0.5vmax;
+    height: 100%;
+    width: 100%;
+    top: -0.75vmax;
+    left: 0vmax;
+}
+
+.gptarea {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    height: 100%;
+    width: 100%;
+
+    top: 0vmax;
+}
+.gptinput {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    width: calc(100% - 3vmax);
+    height: 2vmax;
+    border: 0px solid;
+
+    bottom: 1vmax;
+    left: 1vmax;
+
+    color: var(--txt);
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    padding-left: 1vmax;
+
+    transition: box-shadow 0.2s ease;
+}
+.gptinput:focus {
+    outline: 0;
+    box-shadow: 0px 0.2vmax 0px -1px var(--pri);
+}
+
+.gptwrote {
+    position: absolute;
+    color: white;
+    background: linear-gradient(32deg, var(--pri2), var(--acc2));
+    border-radius: 0.5vmax;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    padding: 0.5vmax;
+    left: 1vmax;
+    bottom: 3vmax;
+    z-index: 2;
+
+    width: calc(50% - 2.25vmax);
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.humanwrote {
+    position: absolute;
+    color: white;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    font-family: poppins,sans-serif;
+    font-size: 0.75vmax;
+    padding: 0.5vmax;
+    right: 1vmax;
+    bottom: 3vmax;
+
+    width: calc(50% - 2.25vmax);
+
+    animation: pulse2 5s ease-in-out infinite;
+}
+.azeraigpticon {
+    position: absolute;
+    height: 7vmax;
+    aspect-ratio: 1/1;
+
+    left: 0.5vmax;
+    bottom: 2.5vmax;
+    opacity: 0.5;
+
+    transform: scaleX(-1);
+    z-index: -1;
+}
+
+.skin {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    height: 3vmax;
+    width: 3vmax;
+
+    top: 0px;
+    right: 0px;
+}
+.darkbutton, .lightbutton {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    width: 2.5vmax;
+    left: 0.25vmax;
+    top: 0.25vmax;
+
+    transition: opacity 0.2s ease;
+}
+.darkbutton > img, .lightbutton > img {
+    position: absolute;
+    height: 100%;
+    scale: 0.75;
+
+    filter: var(--icon);
+}
+.lightbutton {
+    pointer-events: none;
+    opacity: 0;
+}
+.scheme {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    height: 3vmax;
+    width: calc(100% - 3.5vmax);
+
+    left: 0vmax;
+    top: 0vmax;
+}
+.primary {
+    position: absolute;
+    background: var(--pri);
+    box-shadow: 0px 0px 0px 0.75vmax var(--pri2);
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    aspect-ratio: 1/1;
+    scale: 0.5;
+
+    top: 0.25vmax;
+    left: 0.25vmax;
+}
+.secondary {
+    position: absolute;
+    background: var(--sec);
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    aspect-ratio: 1/1;
+    scale: 0.5;
+
+    top: 0.25vmax;
+    left: 2.5vmax;
+}
+.accent {
+    position: absolute;
+    background: var(--acc);
+    box-shadow: 0px 0px 0px 0.75vmax var(--acc2);
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    aspect-ratio: 1/1;
+    scale: 0.5;
+
+    top: 0.25vmax;
+    left: 2.5vmax;
+}
+.text {
+    position: absolute;
+    border-radius: 0.5vmax;
+    color: var(--txt);
+    text-shadow: 0vmax 0vmax 1.75vmax var(--out);
+    height: 2.5vmax;
+    aspect-ratio: 1/1;
+    scale: 0.5;
+    font-family: gabarito,sans-serif;
+    font-size: 3vmax;
+    z-index: 2;
+
+    top: -2vmax;
+    left: 4.75vmax;
+}
+.background {
+    position: absolute;
+    background: var(--bg1);
+    box-shadow:
+        0px 0px 0px 0.75vmax var(--bg),
+        0px 0px 0px 1.5vmax var(--bg2);
+    border-radius: 0.5vmax;
+    height: 2.5vmax;
+    aspect-ratio: 1/1;
+    scale: 0.38;
+
+    top: 0.25vmax;
+    left: 6.5vmax;
+}
+.palette {
+    position: absolute;
+    color: var(--txt);
+    font-family: gabarito,sans-serif;
+    font-size: 1vmax;
+
+    text-align: right;
+    right: 1vmax;
+    top: 0.8vmax;
+}
+.allthemes {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 0.5vmax;
+    width: 100%;
+    height: 20.5vmax;
+
+    bottom: 0px;
+    left: 0px;
+}
+.rose, .candy, .toxic, .grapefruit, .fresh {
+    position: absolute;
+    background: var(--bg1);
+    border-radius: 1vmax;
+    height: 4vmax;
+    width: calc(50% - 2vmax);
+    cursor: pointer;
+}
+.rose {
+    top: 1vmax;
+    left: 1vmax;
+}
+.rose > .themeline {
+    background: linear-gradient(to right, #fd4040, #ff37af);
+}
+.rose > .themename {
+    color: #fd4040;
+}
+.candy {
+    top: 1vmax;
+    right: 1vmax;
+}
+.candy > .themeline {
+    background: linear-gradient(to right, rgba(75, 119, 255,1), rgba(174, 75, 255,1));
+}
+.candy > .themename {
+    color: rgba(75, 119, 255,1);
+}
+.toxic {
+    top: 6vmax;
+    left: 1vmax;
+}
+.toxic > .themeline {
+    background: linear-gradient(to right, rgba(99, 255, 75,1), rgba(72, 157, 46,1));
+}
+.toxic > .themename {
+    color: rgba(99, 255, 75,1);
+}
+.grapefruit {
+    top: 6vmax;
+    right: 1vmax;
+}
+.grapefruit > .themeline {
+    background: linear-gradient(to right, rgba(255, 177, 75,1), rgba(255, 99, 76,1));
+}
+.grapefruit > .themename {
+    color: rgba(255, 177, 75,1);
+}
+.fresh {
+    top: 11vmax;
+    left: 1vmax;
+}
+.fresh > .themeline {
+    background: linear-gradient(to right, rgba(75, 165, 255,1), rgba(61, 201, 68,1));
+}
+.fresh > .themename {
+    color: rgba(75, 165, 255,1);
+}
+.themeline {
+    position: absolute;
+    border-radius: 1vmax;
+    height: 0.5vmax;
+    width: calc(100% - 1vmax);
+
+    bottom: 0.5vmax;
+    left: 0.5vmax;
+}
+.themename {
+    position: absolute;
+    color: white;
+    font-family: poppins,sans-serif;
+    font-size: 1.5vmax;
+    top: -0.4vmax;
+    left: 1vmax;
+}

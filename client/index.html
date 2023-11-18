@@ -1,71 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/clickgui.js"></script>
+
+
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/keyframes.css">
+    <link rel="stylesheet" href="css/ids.css">
     <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<div class="main"><img src="img/screenshot2.png">
+<img src="img/screenshot.png">
 
-<div class="titlebox">
-    <div class="titledec"></div>
-    <h1 class="title">Pentrum Client</h1>
+<div id="theme" class="title">
+    <div class="dec1"></div>
+    <h1 class="titletxt">Pentrum</h1>
+</div>
+<div class="scoreboard">
+    <div id="theme" class="scoreboardtitle">
+        <div class="dec1"></div>
+        <h1 class="scoreboardtitletitle">Session info</h1>
+    </div>
+    <div id="theme" class="scoreboardinfo">
+        <div class="dec1"></div>
+        <h1 class="scoreboardip">femboys.hypixel.net</h1>
+        <h1 class="scoreboardkd">KD - 0</h1>
+        <h1 class="scoreboardtime">Playtime - 1h 23min 72s</h1>
+        <h1 class="scoreboardconfig">Config - hypicel</h1>
+    </div>
+</div>
+<div id="theme" class="status">
+    <div class="dec1"></div>
+    <h1 class="statustxt">Pentrum DSFB is on</h1>
 </div>
 
-<div class="tabgui">
-    <h1 class="tabguitext"><span class="tabguicombat">Combat </span><span class="tabguimovement"><br>Movement </span><span class="tabguirender"><br>Render </span><span class="tabguiplayer"><br>Player </span><span class="tabguimisc"><br>Misc </span><span class="tabguipersonalise"><br>Personalise</span></h1>
-    <div class="tabguisel"></div>
+<div id="theme" class="arraylist">
+    <h1 class="arraytext">Combat<br>
+        <span class="m">Movement</span><br>
+        <span class="r">Render</span><br>
+        <span class="p">Player</span><br>
+        <span class="mi">Misc</span><br>
+        <span class="e">Exploit</span><br>
+    </h1>
+    <div id="arrayline" class="combat">
+        <div class="combatfill"></div>
+    </div>
+    <div id="arrayline" class="movement">
+        <div class="movementfill"></div>
+    </div>
+    <div id="arrayline" class="render">
+        <div class="renderfill"></div>
+    </div>
+    <div id="arrayline" class="player">
+        <div class="playerfill"></div>
+    </div>
+    <div id="arrayline" class="misc">
+        <div class="miscfill"></div>
+    </div>
+    <div id="arrayline" class="exploit">
+        <div class="exploitfill"></div>
+    </div>
+    <div class="dec2"></div>
 </div>
 
-<div class="hotbar">
-    <div class="hotbarhealth">
-        <div class="hotbarhealthfull"></div>
-    </div>
-    <div class="hotbararmor">
-        <div class="hotbararmorfull"></div>
-    </div>
 
+<div class="clickhide">
+    <div class="gradient"></div>
+    <div class="clickgui">
+        <h1 class="clicktitle">Pentrum</h1>
+        <div class="tutorial">
+            <h1 class="tutorialtxt">Welcome to this client, Guest.<br>Do you wish to start the tutorial?</h1>
+            <h1 class="tutorialno">No thanks</h1>
+            <h1 class="tutorialyes">Yes please</h1>
+        </div>
+        <div class="ontutorial">
+            <img class="ontutorialimg" src="img/char/azeraihello.png">
+            <h1 class="ontutorialtxt">heya my name is <span class="azerai">Azerai</span><br>
+                im your virtual assistant and this page is not completed<br>
+                imagine you finished the tutorial :)</h1>
+            <h1 class="ontutorialbutton">Alright...</h1>
+        </div>
+        <div class="clickmain">
+            <div class="clickmainsep1"></div>
+            <div class="clickmainsep2"></div>
+            <div class="clickmainsep3"></div>
+
+            <div class="profile">
+                <img class="profilepfp" src="img/apsz.png">
+                <img class="profilepfpund" src="img/apsz.png">
+                <h1 class="profilename">Guest</h1>
+                <h1 class="profilerole">founder</h1>
+            </div>
+            <div class="spotify">
+                <h1 class="spotifyname">Your song</h1>
+                <h1 class="spotifyauthor">Your favourite artist</h1>
+                <div class="spotifyline"></div>
+                <div class="visualizer">
+                    <div class="vis1"></div>
+                    <div class="vis2"></div>
+                    <div class="vis3"></div>
+                    <div class="vis4"></div>
+                    <div class="vis5"></div>
+                    <div class="vis6"></div>
+                    <div class="vis7"></div>
+                    <div class="vis8"></div>
+                    <div class="vis9"></div>
+                    <div class="vis10"></div>
+                </div>
+            </div>
+            <div class="spotifycontrol">
+                <img src="img/spotify/unskip.png" class="unskip">
+                <img src="img/spotify/skip.png" class="skip">
+                <img src="img/spotify/play.png" class="play">
+                <img src="img/spotify/shuffle.png" class="shuffle">
+                <img src="img/spotify/repeat.png" class="repeat">
+            </div>
+            <div class="category">
+                <div class="catmain">
+                    <div class="decmain"></div>
+                    <h1 class="catmaintext">Main</h1>
+                </div>
+                <div class="catmodules">
+                    <div class="decmodules"></div>
+                    <h1 class="catmodulestext">Modules</h1>
+                </div>
+                <div class="catgpt">
+                    <div class="decgpt"></div>
+                    <h1 class="catgpttext">AzeraiGPT</h1>
+                </div>
+                <div class="catsettings">
+                    <div class="decsettings"></div>
+                    <h1 class="catsettingstext">Preferances</h1>
+                </div>
+            </div>
+            <div class="mainbox">
+                <div class="session">
+                    <h1 class="sessiontext">Entire session info</h1>
+                    <h1 class="sessiondesc">Server: <span class="normal">Femboys.hypixel.net</span><br>
+                        Total kills: <span class="normal">23</span><br>
+                        Playtime: <span class="normal">1h 23min 72s</span><br>
+                        Active time: <span class="normal">53min 18s</span><br>
+                        Servers entered: <span class="normal">2</span><br>
+                        Games played: <span class="normal">37</span><br>
+                        Config: <span class="normal">generated using DSFB</span><br>
+                        Staff online: <span class="normal">23</span><br>
+                        Anticheat: <span class="normal">WatchEboys</span><br>
+                    </h1>
+                    <div class="sessionactivity">
+                        <h1 class="sessionactivitytext">Activity</h1>
+                        <h1 class="start">Start</h1>
+                        <h1 class="end">Now</h1>
+                        <div class="activityrods">
+                            <div class="arod1"></div>
+                            <div class="arod2"></div>
+                            <div class="arod3"></div>
+                            <div class="arod4"></div>
+                            <div class="arod5"></div>
+                            <div class="arod6"></div>
+                            <div class="arod7"></div>
+                            <div class="arod8"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="performance">
+                    <h1 class="performancetext">Performance</h1>
+                    <h1 class="performancedesc">Avarage FPS: <span class="normal">120</span><br>
+                        Max FPS: <span class="normal">874</span><br>
+                        FPS killed by client: <span class="normal">285</span><br>
+                        Avarage ping: <span class="normal">143ms</span><br>
+                    </h1>
+                </div>
+                <div class="hotkey">
+                    <h1 class="hotkeytext">Hotkeys</h1>
+                    <h1 class="hotkeydesc">Killaura: <span class="normal">R</span><br>
+                        Speed: <span class="normal">X</span><br>
+                        Scaffold: <span class="normal">V</span><br>
+                        Flight: <span class="normal">F</span><br>
+                    </h1>
+                </div>
+                <div class="task">
+                    <h1 class="tasktext">Daily task</h1>
+                    <h1 class="tasktext2">Reward: 50 Pentacoins</h1>
+                    <h1 class="taskdesc">Kill 50 Players</h1>
+                    <h1 class="tasknum">46%</h1>
+                </div>
+                <div class="news">
+                    <div class="newsbg"></div>
+                    <h1 class="newstext">News</h1>
+                    <h1 class="newsdesc">Meet AzeraiGPT</h1>
+                    <h1 class="newsdesc2">A GPT model capable to<br>
+                        provide the ultimate experiance</h1>
+                    <img class="newsimg" src="img/char/azeraihello.png">
+                </div>
+            </div>
+            <div class="modulesbox">
+                <div class="mocats">
+                    <div class="mocombat">
+                        <h1 class="mocombat2">Combat</h1>
+                    </div>
+                    <div class="momovement">
+                        <h1 class="momovement2">Movement</h1>
+                    </div>
+                    <div class="morender">
+                        <h1 class="morender2">Render</h1>
+                    </div>
+                    <div class="moplayer">
+                        <h1 class="moplayer2">Player</h1>
+                    </div>
+                    <div class="momisc">
+                        <h1 class="momisc2">Misc</h1>
+                    </div>
+                    <div class="moexploit">
+                        <h1 class="moexploit2">Exploit</h1>
+                    </div>
+                </div>
+                <div class="mocats2">
+                    <h1 class="mocats2text">Modules feature is still underway</h1>
+                </div>
+            </div>
+            <div class="gptbox">
+                <div class="gptarea">
+                    <input class="gptinput" placeholder="Write something">
+
+                    <h1 class="gptwrote">Probably not. did you see how much ChatGPT costs??<br>
+                        there is no way Apsz is getting ChatGPT
+
+                        <img src="img/char/azeraicry.webp" class="azeraigpticon"></h1>
+                    <h1 class="humanwrote">will azeraigpt be real sometime soon?</h1>
+                </div>
+            </div>
+            <div class="settingsbox">
+                <div class="skin">
+                    <div class="darkbutton">
+                        <img src="img/settings/moon.png">
+                    </div>
+                    <div class="lightbutton">
+                        <img src="img/settings/sun.png">
+                    </div>
+                </div>
+                <div class="scheme">
+                    <div class="primary"></div>
+                    <div class="accent"></div>
+                    <h1 class="text">T</h1>
+                    <div class="background"></div>
+
+                    <div class="palette">Browser will not remember any settings</div>
+                </div>
+                <div class="allthemes">
+                    <div class="rose">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Aesthetic rose</h1>
+                    </div>
+                    <div class="candy">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Candy</h1>
+                    </div>
+                    <div class="toxic">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Toxic waste</h1>
+                    </div>
+                    <div class="grapefruit">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Grapefruit</h1>
+                    </div>
+                    <div class="grapefruit">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Grapefruit</h1>
+                    </div>
+                    <div class="fresh">
+                        <div class="themeline"></div>
+                        <h1 class="themename">Fresh</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-    <div class="items">
-        <div class="itemsel"></div>
-    </div>
-
-    <div class="notify">
-        <h1 class="notifytext">Notifications have been turned on</h1>
-        <h1 class="notifydec"></h1>
-    </div>
-
-    <div class="info">
-        <h1 class="fps">FPS: <span class="fps1">120</span></h1>
-        <h1 class="coords">XYZ: <span class="coords1">24 / 127 / 32</span></h1>
-        <h1 class="biome">Biome: <span class="biome1">Snowy taiga</span></h1>
-    </div>
-
-
-    <div class="session">
-        <div class="sessiondec"></div>
-        <h1 class="server">Localhost</h1>
-        <h1 class="killdead">0 kills / 0 deaths</h1>
-        <h1 class="playtime">Playtime: 3h 27min 21s</h1>
-    </div>
-
-    <div class="arraylist">
-        <div class="arraydec"></div>
-        <h1 class="vel">Velocity <span class="vel2">normal</span></h1>
-        <h1 class="hud">Hud <span class="hud2">modern</span></h1>
-        <h1 class="arsession">Session <span class="arsession2">theme</span></h1>
-        <h1 class="arinfo">Info <span class="arinfo2">theme</span></h1>
-        <h1 class="artabgui">Tabgui <span class="artabgui2">theme</span></h1>
-    </div>
-
-
-
-
-
-</div>
-
 </body>
 </html>
+<style>
+    :root {
+        --bg: rgba(9, 9, 11,1);
+        --bg3: rgba(9, 9, 11,0.25);
+        --bg1: rgba(5, 5, 6,1);
+        --bg2: rgba(15,15,17,1);
+        --out: rgba(40,40,42,1);
+        --txt: rgba(220, 220, 220,1);
+        --pri: rgba(75, 119, 255,1);
+        --pri2: rgba(75, 119, 255,0.1);
+        --sec: rgba(8, 14, 38,1);
+        --acc: rgba(174, 75, 255,1);
+        --acc2: rgba(174, 75, 255,0.1);
+
+        --icon: invert(92%) sepia(0%) saturate(75%) hue-rotate(147deg) brightness(96%) contrast(94%);
+
+        transition: all 0.5s ease;
+    }
+</style>

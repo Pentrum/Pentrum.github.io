@@ -1,0 +1,14 @@
+#theme {
+    position: absolute;
+    background: var(--bg3);
+    backdrop-filter: blur(0.25vmax);
+}
+#arrayline {
+    position: absolute;
+    background: var(--bg);
+    border-radius: 50vmax;
+    height: 0.2vmax;
+    width: 60%;
+
+    right: 0.5vmax;
+}

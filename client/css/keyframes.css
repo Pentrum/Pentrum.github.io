@@ -1,0 +1,228 @@
+@keyframes vis1 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    25% {
+        height: 32%;
+    }
+    50% {
+        height: 16%;
+        background: var(--acc)
+    }
+    75% {
+        height: 21%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis2 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    30% {
+        height: 72%;
+    }
+    42% {
+        height: 75%;
+    }
+    50% {
+        background: var(--acc);
+    }
+    75% {
+        height: 64%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis3 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    20% {
+        height: 100%;
+    }
+    50% {
+        background: var(--acc);
+    }
+    60% {
+        height: 90%;
+    }
+    80% {
+        height: 81%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis4 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 42%;
+    }
+    40% {
+        height: 51%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 20%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis5 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 32%;
+    }
+    40% {
+        height: 29%;
+    }
+        50% {
+        background: var(--acc);
+    }
+
+    74% {
+        height: 36%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis6 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 24%;
+    }
+    40% {
+        height: 7%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 12%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis7 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 47%;
+    }
+    40% {
+        height: 42%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 32%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis8 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 88%;
+    }
+    40% {
+        height: 92%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 32%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis9 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 62%;
+    }
+    40% {
+        height: 42%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 46%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+@keyframes vis10 {
+    0% {
+        height: 0%;
+        background: var(--pri);
+    }
+    28% {
+        height: 12%;
+    }
+    40% {
+        height: 22%;
+    }
+        50% {
+        background: var(--acc);
+    }
+    74% {
+        height: 11%;
+    }
+    100% {
+        height: 0%;
+        background: var(--pri);
+    }
+}
+
+@keyframes spotifyline {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
